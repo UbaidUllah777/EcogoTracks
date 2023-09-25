@@ -8,8 +8,12 @@ import {
 } from "react-router-dom";
 
 //  **** LOCAL FILES/COMPONENTS ***
+//>>Pages
 import Users from "./user/pages/Users";
-import Places from "./places/pages/Places";
+import Home from "./home/pages/Home";
+import AboutUs from "./about-us/pages/AboutUS";
+
+//>>COMPONENTS
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 
 //  *** STYLING ***
@@ -23,10 +27,13 @@ function App() {
       <main>
         <Switch>
           <Route path="/" exact>
-            <Users />
+            <Home />
           </Route>
-          <Route path="/places">
-            <Places />
+          <Route path="/about-us">
+            <AboutUs />
+          </Route>
+          <Route path="/users">
+            <Users />
           </Route>
           <Redirect to="/" />
         </Switch>
