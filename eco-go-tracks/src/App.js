@@ -12,6 +12,7 @@ import "./App.css";
 
 function App() {
   return (
+<<<<<<< HEAD
     <Router>
       <Route path="/" exact>
         <Users />
@@ -20,6 +21,14 @@ function App() {
         <Places />
       </Route>
     </Router>
+=======
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>Sanga chal d kwana tenga ka shafiqa</p>
+      </header>
+    </div>
+>>>>>>> c350f89fad6ebceb26aefaee9ce7f6b4c3b08ebf
   );
 }
 
