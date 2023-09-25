@@ -1,4 +1,6 @@
 import React from "react";
+
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Banner.css";
 
@@ -8,9 +10,9 @@ const Banner = ({ pageInfo, heading, description }) => {
       <div className="banner-content">
         <h1>{heading}</h1>
         <p>{description}</p>
-        <a href="#explore" className="explore-button">
+        <Link to="/about-us" className="explore-button">
           Explore Now
-        </a>
+        </Link>
         <div className="page-info">{pageInfo}</div>
       </div>
     </div>
