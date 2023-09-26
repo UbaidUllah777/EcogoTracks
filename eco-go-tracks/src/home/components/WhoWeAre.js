@@ -20,7 +20,7 @@ const WhoWeAre = () => {
         </div>
       </div>
 
-      <div className="container ">
+      <div className="container center ">
         <div className="row">
           <div className="col-md-6">
             <h1 className="globalHeading2">What is your impact?</h1>
