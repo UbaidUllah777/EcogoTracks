@@ -23,12 +23,50 @@ const WhoWeAre = () => {
         </div>
       </div>
 
-      <div className="container-fluid">
+      <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <img className="home-page-image" src="" />
-            <img className="home-page-image" src="" />
-            <img className="home-page-image" src="" />
+          <div class="row">
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+              <img
+                src="home-gallery1.jpg"
+                className="w-100 shadow-1-strong rounded mb-4"
+                alt="electric car recharging"
+              />
+
+              <img
+                src="home-gallery2.jpg"
+                className="w-100 shadow-1-strong rounded mb-4"
+                alt="mono electric tram on the tracks"
+              />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <img
+                src="home-gallery3.jpg"
+                className="w-100 shadow-1-strong rounded mb-4"
+                alt="avoid plastic usage sign"
+              />
+
+              <img
+                src="home-gallery4.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Kid using electric bike"
+              />
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+              <img
+                src="home-gallery5.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="carbon emissions from a factory"
+              />
+
+              <img
+                src="home-gallery6.jpg"
+                class="w-100 shadow-1-strong rounded mb-4"
+                alt="Yosemite National Park"
+              />
+            </div>
           </div>
         </div>
       </div>
