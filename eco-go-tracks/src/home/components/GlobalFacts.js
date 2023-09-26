@@ -9,10 +9,10 @@ const GlobalFacts = () => {
         <div className="container">
           <div className="row">
             <div className="col-md-8">
-              <h2 className="sub-heading">Featured Blogs</h2>
+              <h2 className="sub-heading">Global Stats</h2>
               <h1 className="main-heading">
                 {" "}
-                The Power of Green Transportation
+                Current Scenario of Carbon Footprints
               </h1>
               <p>
                 This year, Earth Overshoot Day falls on August 2nd. That’s the
