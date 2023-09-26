@@ -28,3 +28,22 @@
     background-color: #284662;
     height: 30px;
 }
+
+
+
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .social-icons svg {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #ca477d;
+  }
+  
+  .social-icons svg:hover {
+    color: #fff; 
+    cursor: pointer;
+  }
