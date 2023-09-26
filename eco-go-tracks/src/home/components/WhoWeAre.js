@@ -22,6 +22,16 @@ const WhoWeAre = () => {
           </div>
         </div>
       </div>
+
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-4">
+            <img className="home-page-image" src="" />
+            <img className="home-page-image" src="" />
+            <img className="home-page-image" src="" />
+          </div>
+        </div>
+      </div>
       <HR />
       <div className="container center ">
         <div className="row">
