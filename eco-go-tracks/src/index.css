@@ -59,3 +59,13 @@ p {
   font-size: larger;
   margin: 20px 0px;
 }
+.Logo {
+  max-width: 150px; /* Default max-width for the logo */
+}
+
+/* Media query for tablet and larger devices */
+@media (max-width: 433px) {
+  .Logo {
+    display: none; /* Hide the logo on tablet and smaller devices */
+  }
+}
