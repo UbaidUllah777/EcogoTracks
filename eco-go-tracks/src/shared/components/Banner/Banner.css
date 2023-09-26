@@ -1,20 +1,20 @@
-body, html {
-    margin: 0;
-    padding: 0;
-  }
+
   
   .banner {
     width: 100%;
-    height:50vh;
-    background-color:yellow ;
+    height:60vh;
+    background-image: url("../../../../public/HomeBanner.jpg");
     background-size: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     text-align: center;
-    position: relative; /* Make the parent element relative for absolute positioning */
+    position: relative; 
+    
+
 }
 
 .page-info {
@@ -22,7 +22,7 @@ body, html {
   bottom: 10px; /* Adjust the bottom distance as needed */
   right: 10px; /* Adjust the right distance as needed */
   color: white;
-  font-weight: 700;
+  font-weight: 500;
 }
   
   .banner-content {
@@ -41,9 +41,10 @@ body, html {
   
   .explore-button {
     padding: 10px 20px;
+    margin-bottom: 10px ;
     font-size: 1rem;
     border: none;
-    background-color: #01be96;
+    background-color: #CA477D;
     color: white;
     text-decoration: none;
     border-radius: 5px;

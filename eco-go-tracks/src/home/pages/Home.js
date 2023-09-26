@@ -8,7 +8,9 @@ const Home = () => {
     "Discover Sustainable Transportation Solutions and Reduce Your Carbon Footprint"; // Description for the banner
 
   return (
-    <Banner pageInfo={pageInfo} heading={heading} description={description} />
+    <React.Fragment>
+      <Banner pageInfo={pageInfo} heading={heading} description={description} />
+    </React.Fragment>
   );
 };
 
