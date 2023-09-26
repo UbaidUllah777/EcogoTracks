@@ -1,7 +1,6 @@
 import React from "react";
-
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
+import Button from "../UIElements/Button";
 import "./Banner.css";
 
 const Banner = ({ pageInfo, heading, description }) => {
@@ -10,9 +9,11 @@ const Banner = ({ pageInfo, heading, description }) => {
       <div className="banner-content">
         <h1>{heading}</h1>
         <p>{description}</p>
-        <Link to="/about-us" className="explore-button">
-          Explore Now
-        </Link>
+        <Button
+          to="/about-us"
+          className="primary-button "
+          buttonText="Explore Now"
+        />
         <div className="page-info">{pageInfo}</div>
       </div>
     </div>

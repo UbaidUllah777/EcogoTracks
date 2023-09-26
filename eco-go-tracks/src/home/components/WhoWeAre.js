@@ -1,5 +1,7 @@
 import React from "react";
 
+import Button from "../../shared/components/UIElements/Button";
+
 import "./WhoWeAre.css";
 
 const WhoWeAre = () => {
@@ -27,6 +29,11 @@ const WhoWeAre = () => {
             <p>
               Calculate your EcologicalFootprint© and personalOvershoot Day.
             </p>
+            <Button
+              to="/about-us"
+              className="secondary-button"
+              buttonText="View Full Blog"
+            />
           </div>
           <div className="col-md-6">
             <h1 className="globalHeading2">Passionate about data?</h1>
