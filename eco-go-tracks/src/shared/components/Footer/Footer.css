@@ -1,0 +1,30 @@
+.FullFooter{
+    background-color:#264059 ;
+    color: aliceblue;
+}
+
+.footerMenuHeading{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ca477d;
+    /* text-decoration: underline; */
+    margin: 10px 0px;
+    padding-left: 25px;
+
+    
+}
+.footerLinksRow{
+    padding-bottom: 20px;
+}
+.footerList{
+    list-style: none;
+}
+.footerList li:hover{
+    color: #ca477d;
+    cursor: pointer;
+}
+
+.copyRightRow{
+    background-color: #284662;
+    height: 30px;
+}

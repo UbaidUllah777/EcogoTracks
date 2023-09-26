@@ -15,6 +15,7 @@ import AboutUs from "./about-us/pages/AboutUS";
 
 //>>COMPONENTS
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
+import Footer from "./shared/components/Footer/Footer";
 
 //  *** STYLING ***
 
@@ -38,6 +39,7 @@ function App() {
           <Redirect to="/" />
         </Switch>
       </main>
+      <Footer />
     </Router>
   );
 }
