@@ -3,6 +3,7 @@ import Banner from "../../shared/components/Banner/Banner";
 
 import WhoWeAre from "../components/WhoWeAre";
 import FeaturedBlogs from "../components/FeaturedBlogs";
+import GlobalFacts from "../components/GlobalFacts";
 
 const Home = () => {
   const pageInfo = "Home"; // Page information for Home page
@@ -15,6 +16,7 @@ const Home = () => {
       <Banner pageInfo={pageInfo} heading={heading} description={description} />
       <WhoWeAre />
       <FeaturedBlogs />
+      <GlobalFacts />
     </React.Fragment>
   );
 };
