@@ -6,19 +6,24 @@ const GlobalFacts = () => {
     <div className="container">
       <div className="row center pb-5">
         <div className="col-md-12">
-          <h1>Gobal insights About Carbon Emissions</h1>
+          <h1 className="globalHeading2">
+            Gobal insights About Carbon Emissions
+          </h1>
         </div>
       </div>
       <div className="row pb-5">
         <div className="col-md-8 vertical-line">
           <p>
-            <span className="primary-color boldText">This year</span>, Earth
-            Overshoot Day falls on August 2nd. That’s the consequence of
-            humanity demanding 70% more than Earth’s ecosystems are able to
-            regenerate. Food makes up a large part of our Ecological Footprint –
-            feeding humanity currently takes just about 50% of Earth’s
-            biocapacity. Food is essential. With a growing human population, and
-            increasing...
+            <span className="primary-color boldText">Carbon emissions</span>,
+            often referred to as carbon dioxide (CO2) emissions, encompass the
+            release of carbon compounds into the atmosphere. These compounds
+            include carbon dioxide itself and other greenhouse gases such as
+            methane and nitrous oxide. Carbon emissions primarily result from
+            human activities, particularly the burning of fossil fuels like
+            coal, oil, and gas, which power industries, transportation, and
+            homes. Understanding and monitoring carbon emissions is crucial for
+            assessing environmental impact and implementing strategies to
+            mitigate climate change.
           </p>
         </div>
         <div className="col-md-4">
@@ -33,19 +38,18 @@ const GlobalFacts = () => {
       <div className="row pb-5">
         <div className="col-md-8 vertical-line">
           <p>
-            <span className="primary-color boldText">The Biggest </span>, Earth
-            Overshoot Day falls on August 2nd. That’s the consequence of
-            humanity demanding 70% more than Earth’s ecosystems are able to
-            regenerate. Food makes up a large part of our Ecological Footprint –
-            feeding humanity currently takes just about 50% of Earth’s
-            biocapacity. Food i irure fugiat. Amet consequat proident occaecat
-            Lorem consequat Lorem ut reprehenderit aliqua et. Ullamco laboris
-            mollit reprehenderit duis cillum minim fugiat dolore. Consectetur
-            consectetur laboris sit esse pariatur esse cillum reprehenderit
-            aliqua ut do culpa ex et. Amet voluptate laborum amet officia
-            excepteur Lorem consequat enim sunt non cillum. Consectetur in do in
-            ex qui cupidatat ex exercitation quis ut sunt veniam excepteur
-            aliqua.
+            <span className="primary-color boldText">
+              The escalating levels{" "}
+            </span>
+            of carbon emissions have profound repercussions on our planet's
+            climate and overall well-being. Excessive carbon dioxide in the
+            atmosphere traps heat, contributing to global warming and climate
+            change. This, in turn, leads to more frequent and severe weather
+            events, rising sea levels, disruptions in ecosystems, and threats to
+            biodiversity. It's imperative to curb carbon emissions to mitigate
+            these adverse effects and transition to sustainable energy sources
+            and eco-conscious practices that promote a cleaner, healthier
+            environment for current and future generations.
           </p>
         </div>
         <div className="col-md-4">
@@ -60,19 +64,20 @@ const GlobalFacts = () => {
       <div className="row pb-5">
         <div className="col-md-8 vertical-line">
           <p>
-            <span className="primary-color boldText">The Biggest </span>, Earth
-            Overshoot Day falls on August 2nd. That’s the consequence of
-            humanity demanding 70% more than Earth’s ecosystems are able to
-            regenerate. Food makes up a large part of our Ecological Footprint –
-            feeding humanity currently takes just about 50% of Earth’s
-            biocapacity. Food i irure fugiat. Amet consequat proident occaecat
-            Lorem consequat Lorem ut reprehenderit aliqua et. Ullamco laboris
-            mollit reprehenderit duis cillum minim fugiat dolore. Consectetur
-            consectetur laboris sit esse pariatur esse cillum reprehenderit
-            aliqua ut do culpa ex et. Amet voluptate laborum amet officia
-            excepteur Lorem consequat enim sunt non cillum. Consectetur in do in
-            ex qui cupidatat ex exercitation quis ut sunt veniam excepteur
-            aliqua.
+            <span className="primary-color boldText">
+              The global challenge{" "}
+            </span>
+            addressing of carbon emissions necessitates a collective effort
+            involving governments, businesses, communities, and individuals.
+            International agreements, such as the Paris Agreement, set the stage
+            for collaborative action to limit global warming and reduce carbon
+            emissions to sustainable levels. Strategies encompass transitioning
+            to renewable energy sources, enhancing energy efficiency, promoting
+            sustainable transportation, adopting carbon capture technologies,
+            and fostering a culture of responsible consumption. By aligning
+            efforts and innovating towards a low-carbon future, we can pave the
+            way for a sustainable world and preserve the beauty and balance of
+            our planet.
           </p>
         </div>
         <div className="col-md-4">

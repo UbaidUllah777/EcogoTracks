@@ -14,15 +14,16 @@ const FeaturedBlogs = () => {
               <h2 className="sub-heading">Featured Blogs</h2>
               <h1 className="main-heading">
                 {" "}
-                The Power of Green Transportation
+                Cycling Towards Sustainability: Pedal-Powered Adventures
               </h1>
               <p>
-                This year, Earth Overshoot Day falls on August 2nd. That’s the
-                consequence of humanity demanding 70% more than Earth’s
-                ecosystems are able to regenerate. Food makes up a large part of
-                our Ecological Footprint – feeding humanity currently takes just
-                about 50% of Earth’s biocapacity. Food is essential. With a
-                growing human population, and increasing...
+                Embark on a journey through the world of cycling and its
+                profound impact on sustainability. From reducing carbon
+                emissions to promoting a healthier lifestyle, discover the many
+                benefits of choosing a bicycle as a mode of transportation and
+                leisure. Join us as we explore scenic routes, cycling safety
+                tips, and the joys of embracing a sustainable mode of travel
+                that also keeps you fit and connected to nature.
               </p>
               <Button
                 to="/about-us"

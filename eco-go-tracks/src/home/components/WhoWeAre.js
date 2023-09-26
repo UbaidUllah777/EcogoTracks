@@ -11,13 +11,19 @@ const WhoWeAre = () => {
       <div className="container ">
         <div className="row ">
           <div className="col-12 center">
-            <h1 className="globalHeading1">Measure what you treasure</h1>
+            <h1 className="globalHeading1">
+              Green Commuting for a Sustainable Tomorrow
+            </h1>
             <p className="whoWeAreDesc">
-              Humans use as much ecological resources as if we lived on 1.75
-              Earths <span className="secondary-color">Source</span>. The
-              Ecological Footprint© is the only metric that compares the
-              resource demand of individuals, governments, and businesses
-              against Earth's capacity for biological regeneration.
+              Embrace eco-friendly transportation options to reduce your carbon
+              footprint. From{" "}
+              <span className="secondary-color boldText">
+                {" "}
+                electric vehicles
+              </span>{" "}
+              to cycling initiatives, explore sustainable choices that
+              positively impact our environment. Together, we can pave the way
+              towards cleaner and greener cities.
             </p>
           </div>
         </div>
@@ -74,9 +80,14 @@ const WhoWeAre = () => {
       <div className="container center ">
         <div className="row">
           <div className="col-md-6">
-            <h1 className="globalHeading2">What is your impact?</h1>
+            <h1 className="globalHeading2">
+              Calculate Your Ecological Footprint
+            </h1>
             <p>
-              Calculate your EcologicalFootprint© and personalOvershoot Day.
+              Curious about your lifestyle's impact? Calculate your Ecological
+              Footprint© to gain insights into consumption patterns and their
+              effect on the planet. Discover ways to reduce your footprint for a
+              sustainable future
             </p>
             <Button
               to="/about-us"
@@ -85,14 +96,19 @@ const WhoWeAre = () => {
             />
           </div>
           <div className="col-md-6">
-            <h1 className="globalHeading2">Passionate about data?</h1>
+            <h1 className="globalHeading2">
+              Greening Our World: Embracing Nature's Bounty
+            </h1>
             <p>
-              Check out our Ecological Footprint© Explorer open data platform.
+              Immerse yourself in the beauty of greenery and its benefits. From
+              urban gardens to reforestation projects, discover how embracing
+              nature enhances our lives and nurtures a healthier planet. Let's
+              cultivate a world where green spaces flourish.
             </p>
             <Button
               to="/about-us"
               className="secondary-button"
-              buttonText="View More"
+              buttonText="Explore More"
             />
           </div>
         </div>
