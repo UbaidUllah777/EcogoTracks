@@ -7,6 +7,8 @@
     color: white;
     text-decoration: none;
     border-radius: 5px;
+    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); 
     transition: background-color 0.3s ease-in-out;
   }
   
@@ -24,6 +26,8 @@
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); 
+
   }
   .secondary-button:hover {
     background-color: #CA477D;

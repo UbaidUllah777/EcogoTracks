@@ -1,6 +1,7 @@
 import React from "react";
 
 import Button from "../../shared/components/UIElements/Button";
+import HR from "../../shared/components/HR/HR";
 
 import "./WhoWeAre.css";
 
@@ -11,7 +12,7 @@ const WhoWeAre = () => {
         <div className="row ">
           <div className="col-12 center">
             <h1 className="globalHeading1">Measure what you treasure</h1>
-            <p className="">
+            <p className="whoWeAreDesc">
               Humans use as much ecological resources as if we lived on 1.75
               Earths <span className="secondary-color">Source</span>. The
               Ecological Footprint© is the only metric that compares the
@@ -21,7 +22,7 @@ const WhoWeAre = () => {
           </div>
         </div>
       </div>
-
+      <HR />
       <div className="container center ">
         <div className="row">
           <div className="col-md-6">
@@ -32,7 +33,7 @@ const WhoWeAre = () => {
             <Button
               to="/about-us"
               className="secondary-button"
-              buttonText="View Full Blog"
+              buttonText="Calculate Now"
             />
           </div>
           <div className="col-md-6">
@@ -40,6 +41,11 @@ const WhoWeAre = () => {
             <p>
               Check out our Ecological Footprint© Explorer open data platform.
             </p>
+            <Button
+              to="/about-us"
+              className="secondary-button"
+              buttonText="View More"
+            />
           </div>
         </div>
       </div>

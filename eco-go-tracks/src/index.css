@@ -20,7 +20,7 @@ code {
 }
 
 .container {
-  margin: 15vh 0px;
+  margin: 10vh 0px;
 }
 
 .globalHeading1 {
@@ -38,7 +38,7 @@ code {
 
 p {
   font-size: 1.2rem;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .center {

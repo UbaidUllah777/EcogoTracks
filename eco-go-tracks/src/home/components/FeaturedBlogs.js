@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 
+import Button from "../../shared/components/UIElements/Button";
+
 import "./FeaturedBlogs.css";
 
 const FeaturedBlogs = () => {
@@ -22,6 +24,11 @@ const FeaturedBlogs = () => {
                 about 50% of Earth’s biocapacity. Food is essential. With a
                 growing human population, and increasing...
               </p>
+              <Button
+                to="/about-us"
+                className="primary-button"
+                buttonText="View Full Blog"
+              />
             </div>
             <div className="col-md-4">
               <img
