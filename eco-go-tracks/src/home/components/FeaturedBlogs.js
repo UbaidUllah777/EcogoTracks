@@ -35,7 +35,7 @@ const FeaturedBlogs = () => {
               <img
                 className="blog-image"
                 src="home-blog-image.jpg"
-                alt="blog-image"
+                alt="about Climate"
               />
             </div>
           </div>
