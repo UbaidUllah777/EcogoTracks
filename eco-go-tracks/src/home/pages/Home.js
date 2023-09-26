@@ -1,6 +1,8 @@
 import React from "react";
 import Banner from "../../shared/components/Banner/Banner";
 
+import WhoWeAre from "../components/WhoWeAre";
+
 const Home = () => {
   const pageInfo = "Home"; // Page information for Home page
   const heading = "Your Journey to a Greener Future"; // Heading for the banner
@@ -10,6 +12,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <Banner pageInfo={pageInfo} heading={heading} description={description} />
+      <WhoWeAre />
     </React.Fragment>
   );
 };
