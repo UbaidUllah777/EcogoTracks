@@ -40,6 +40,9 @@ p {
   font-size: 1.2rem;
   padding-bottom: 20px;
 }
+.boldText{
+  font-weight: bold;
+}
 
 .center {
   text-align: center;

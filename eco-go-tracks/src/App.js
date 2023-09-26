@@ -36,6 +36,9 @@ function App() {
           <Route path="/users">
             <Users />
           </Route>
+          <Route path="/calculator">
+            <h1>Calculator Page</h1>
+          </Route>
           <Redirect to="/" />
         </Switch>
       </main>
