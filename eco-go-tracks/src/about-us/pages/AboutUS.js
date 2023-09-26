@@ -1,7 +1,7 @@
 import React from "react";
 import Banner from "../../shared/components/Banner/Banner";
 
-import aboutUsBannerImage from "../../images/HomeBanner.jpg";
+import aboutUsBannerImage from "../../images/aboutUsbanner.jpg";
 
 const AboutUs = () => {
   const pageInfo = "Home/About Us"; // Page information for AboutUs page
