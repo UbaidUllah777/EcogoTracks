@@ -27,7 +27,8 @@ form {
 label {
   display: block;
   font-weight: Normal;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  margin-top: 15px;
   color: #333;
 }
 
@@ -56,37 +57,27 @@ label {
   color: #333;
 }
 
-.form-check-label::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 2px;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #ca477d;
-  border-radius: 3px;
-  background-color: transparent;
-}
-
-.form-check-input:checked + .form-check-label::before {
-  background-color: #ca477d;
-  border-color: #ca477d;
-}
-
 /* Style the submit button */
 .btn-primary {
   display: block;
   margin: 0 auto;
-  background-color: #007bff;
+  background-color: #ca477d;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-size: 18px;
+  font-family: popins;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .btn-primary:hover {
-  background-color: #0056b3;
+  background-color: #ca477d;
+}
+
+.contactheading {
+  color: #ca477d;
+  font-family: popins;
+  padding-top: 20px;
 }
