@@ -5,7 +5,7 @@ import Button from "../../shared/components/UIElements/Button.css";
 
 const Form = () => {
   return (
-    <div classNameName="container">
+    <div className="container">
       <div className="center BGgray">
         <div className="row">
           <div className="contactheading col-12">
@@ -13,12 +13,12 @@ const Form = () => {
           </div>
         </div>
       </div>
-      <div classNameName="row">
-        <div classNameName="col-12">
+      <div className="row">
+        <div className="col-12">
           <form>
             <div className="form-row">
               <div className="form-group col-12">
-                <label for="inputname">Name*</label>
+                <label htmlFor="inputname">Name*</label>
                 <input
                   type="text"
                   className="form-control"
@@ -28,7 +28,7 @@ const Form = () => {
                 />
               </div>
               <div className="form-group col-12">
-                <label for="inputEmail4">Email*</label>
+                <label htmlFor="inputEmail4">Email*</label>
                 <input
                   type="email"
                   className="form-control"
@@ -39,7 +39,7 @@ const Form = () => {
               </div>
             </div>
             <div className="form-group col-12">
-              <label for="inputAddress">Address</label>
+              <label htmlFor="inputAddress">Address</label>
               <input
                 type="text"
                 className="form-control"
@@ -48,7 +48,7 @@ const Form = () => {
               />
             </div>
             <div className="form-group col-12">
-              <label for="inputAddress2">Message*</label>
+              <label htmlFor="inputAddress2">Message*</label>
               <textarea
                 rows="4"
                 type="message"
