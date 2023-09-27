@@ -5,6 +5,8 @@ import WhoWeAre from "../components/WhoWeAre";
 import FeaturedBlogs from "../components/FeaturedBlogs";
 import GlobalFacts from "../components/GlobalFacts";
 import homeBannerImage from "../../images/HomeBanner.jpg";
+import Calculator from "../../shared/components/Calculator/Calculator";
+import CalculationOptions from "../../shared/components/Calculator/CalculationOptions";
 
 const Home = () => {
   const pageInfo = "Home";
@@ -23,6 +25,7 @@ const Home = () => {
       <WhoWeAre />
       <FeaturedBlogs />
       <GlobalFacts />
+      <Calculator CalculationOptions={CalculationOptions} />
     </React.Fragment>
   );
 };
