@@ -47,13 +47,12 @@ const Footer = () => {
             Incididunt sit laborum mollit velit consectetur dolore. Irure et
             ipsum culpa exercitation exercitation aute.
           </p>
-          <Link to="/calculator" style={{ textDecoration: "none" }}>
-            <Button
-              to="/calculator"
-              className="primary-button"
-              buttonText="Calculate Now"
-            />
-          </Link>
+
+          <Button
+            to="/calculator"
+            className="primary-button"
+            buttonText="Calculate Now"
+          />
         </div>
         <div className="col-md-4">
           <h3 className="footerMenuHeading">We Are Social</h3>
