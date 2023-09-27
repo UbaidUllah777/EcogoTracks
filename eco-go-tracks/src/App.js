@@ -12,6 +12,7 @@ import {
 import Users from "./user/pages/Users";
 import Home from "./home/pages/Home";
 import AboutUs from "./about-us/pages/AboutUS";
+import ContactUS from "./contact-us/pages/ContactUs";
 
 //>>COMPONENTS
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/calculator">
             <h1>Calculator Page</h1>
+          </Route>
+          <Route path="/contact-us">
+            <ContactUS />
           </Route>
           <Redirect to="/" />
         </Switch>

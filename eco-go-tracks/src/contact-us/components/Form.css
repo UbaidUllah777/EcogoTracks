@@ -1,0 +1,92 @@
+/* Reset some default styles */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+/* Style the container */
+.container {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+}
+
+/* Style the form */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style form groups */
+.form-group {
+  margin-bottom: 10px;
+}
+
+/* Style labels */
+label {
+  display: block;
+  font-weight: Normal;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Style form inputs and textarea */
+.input-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+.input-control:focus {
+  outline: none;
+  border-color: #ca477d;
+}
+
+/* Style the checkbox */
+.form-check-label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  color: #333;
+}
+
+.form-check-label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ca477d;
+  border-radius: 3px;
+  background-color: transparent;
+}
+
+.form-check-input:checked + .form-check-label::before {
+  background-color: #ca477d;
+  border-color: #ca477d;
+}
+
+/* Style the submit button */
+.btn-primary {
+  display: block;
+  margin: 0 auto;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
