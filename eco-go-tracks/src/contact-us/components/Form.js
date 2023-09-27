@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./Form.css";
+import Button from "../../shared/components/UIElements/Button.css";
 
 const Form = () => {
   return (
@@ -17,21 +18,23 @@ const Form = () => {
           <form>
             <div className="form-row">
               <div className="form-group col-12">
-                <label for="inputname">Name</label>
+                <label for="inputname">Name*</label>
                 <input
                   type="text"
                   className="form-control"
                   id="name"
                   placeholder="Enter your name"
+                  required
                 />
               </div>
               <div className="form-group col-12">
-                <label for="inputEmail4">Email</label>
+                <label for="inputEmail4">Email*</label>
                 <input
                   type="email"
                   className="form-control"
                   id="inputEmail4"
                   placeholder="Enter your email"
+                  required
                 />
               </div>
             </div>
@@ -45,13 +48,14 @@ const Form = () => {
               />
             </div>
             <div className="form-group col-12">
-              <label for="inputAddress2">Message</label>
+              <label for="inputAddress2">Message*</label>
               <textarea
                 rows="4"
                 type="message"
                 className="form-control"
                 id="inputmessage"
                 placeholder="Write your message here"
+                required
               ></textarea>
             </div>
 
@@ -63,7 +67,7 @@ const Form = () => {
                 </label>
               </div>
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="primary-button mt-3">
               Send Message!
             </button>
           </form>
