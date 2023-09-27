@@ -42,6 +42,16 @@ code {
   margin-bottom: 10px;
   color: #ca477d;
 }
+.globalHeading3Primary {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #6ea0b1;
+}
+.globalHeading4Primary {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #6ea0b1;
+}
 
 p {
   font-size: 1.2rem;

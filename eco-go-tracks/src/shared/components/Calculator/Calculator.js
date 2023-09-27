@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+
+// Styling
+import "./Calculator.css";
 import "../UIElements/Button.css";
 
 const Calculator = ({ CalculationOptions }) => {
@@ -8,9 +11,24 @@ const Calculator = ({ CalculationOptions }) => {
   const [options, setOptions] = useState({});
   const optionCount = CalculationOptions.length;
   const [result, setResult] = useState(null);
+  const [multiplier, setMultiplier] = useState(1);
 
   const handleDataFrequencySelect = (frequency) => {
     setDataFrequency(frequency);
+    setMultiplier(getMultiplierForFrequency(frequency));
+  };
+
+  const getMultiplierForFrequency = (frequency) => {
+    switch (frequency) {
+      case "daily":
+        return 1;
+      case "weekly":
+        return 7;
+      case "monthly":
+        return 30;
+      default:
+        return 1;
+    }
   };
 
   const handleOptionChange = (optionName, value) => {
@@ -25,7 +43,11 @@ const Calculator = ({ CalculationOptions }) => {
       return dataFrequency === "";
     } else {
       const optionName = `option${step}`;
-      return !options[optionName];
+      const optionValues = CalculationOptions[step - 2].options.map(
+        (option) => option.value
+      );
+
+      return !options[optionName] && !optionValues.includes(0);
     }
   };
 
@@ -37,7 +59,7 @@ const Calculator = ({ CalculationOptions }) => {
         (acc, val) => acc + parseFloat(val),
         0
       );
-      setResult(total.toFixed(2));
+      setResult((total * multiplier).toFixed(2));
       setStep(step + 1);
     } else {
       setStep(1);
@@ -52,31 +74,43 @@ const Calculator = ({ CalculationOptions }) => {
   };
 
   return (
-    <div className="container BGgray center">
-      <h2 className="globalHeading2">Carbon Footprint Calculator</h2>
+    <div className="container BGgray ">
+      <div className="row center">
+        <div className="col blink">
+          <h2 className="globalHeading2 blinking-text">
+            Carbon Footprint Calculator
+          </h2>
+        </div>
+      </div>
 
       {step === 1 && (
         <div>
-          <h3 className="globalHeading3">Step 1: Select Data Frequency</h3>
+          <h3 className="globalHeading4Primary mt-5">
+            Step 1: Select Data Frequency
+          </h3>
           <label>
-            Select data frequency:
-            <select onChange={(e) => handleDataFrequencySelect(e.target.value)}>
-              <option value="">Select</option>
-              <option value="daily">Daily</option>
-              <option value="weekly">Weekly</option>
-              <option value="monthly">Monthly</option>
-            </select>
+            <div className="custom-select">
+              <select
+                className="combobox"
+                onChange={(e) => handleDataFrequencySelect(e.target.value)}
+              >
+                <option value="">Select data frequency:</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="monthly">Monthly</option>
+              </select>
+            </div>
           </label>
         </div>
       )}
 
       {step !== 1 && step <= optionCount && (
-        <div key={step}>
-          <h3 className="globalHeading3">
+        <div key={step} className="calculator-question mt-5">
+          <h3 className="globalHeading4Primary">
             Step {step}: {CalculationOptions[step - 2].question}
           </h3>
           {CalculationOptions[step - 2].options.map((option) => (
-            <label key={option.value}>
+            <div key={option.value} className="calculator-option-label">
               <input
                 type="radio"
                 name={`option${step}`}
@@ -85,15 +119,16 @@ const Calculator = ({ CalculationOptions }) => {
                   handleOptionChange(`option${step}`, e.target.value)
                 }
               />
+              {"   "}
               {option.label}
-            </label>
+            </div>
           ))}
         </div>
       )}
 
       {result === null && (
         <button
-          className="primary-button"
+          className="primary-button CalculatorBtn"
           onClick={handleNext}
           disabled={isNextDisabled()}
         >
@@ -103,9 +138,14 @@ const Calculator = ({ CalculationOptions }) => {
 
       {result !== null && (
         <div>
-          <h3>Calculated Carbon Footprint:</h3>
+          <h3 className="globalHeading3Primary">
+            Calculated Carbon Footprint:
+          </h3>
           <p>{result} units</p>
-          <button className="secondary-button" onClick={handleReset}>
+          <button
+            className="secondary-button CalculatorBtn"
+            onClick={handleReset}
+          >
             Reset Calculator
           </button>
         </div>
