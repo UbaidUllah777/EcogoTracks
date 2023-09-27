@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-
 import "../UIElements/Button.css";
 
 const Calculator = ({ CalculationOptions }) => {
   const [step, setStep] = useState(1);
   const [dataFrequency, setDataFrequency] = useState("");
   const [options, setOptions] = useState({});
-  const optionCount = CalculationOptions.length; // Total number of options
+  const optionCount = CalculationOptions.length;
   const [result, setResult] = useState(null);
 
   const handleDataFrequencySelect = (frequency) => {
@@ -34,15 +33,14 @@ const Calculator = ({ CalculationOptions }) => {
     if (step < optionCount) {
       setStep(step + 1);
     } else if (step === optionCount) {
-      // Calculate and display results
       const total = Object.values(options).reduce(
         (acc, val) => acc + parseFloat(val),
         0
       );
       setResult(total.toFixed(2));
-      setStep(step + 1); // Increment step to move to the next (results) step
+      setStep(step + 1);
     } else {
-      setStep(1); // Reset to the initial state after seeing the results
+      setStep(1);
     }
   };
 
@@ -75,19 +73,19 @@ const Calculator = ({ CalculationOptions }) => {
       {step !== 1 && step <= optionCount && (
         <div key={step}>
           <h3 className="globalHeading3">
-            Step {step}: Enter Option {CalculationOptions[step - 2].label}
+            Step {step}: {CalculationOptions[step - 2].question}
           </h3>
-          {CalculationOptions[step - 2].values.map((optionValue) => (
-            <label key={optionValue}>
+          {CalculationOptions[step - 2].options.map((option) => (
+            <label key={option.value}>
               <input
                 type="radio"
                 name={`option${step}`}
-                value={optionValue}
+                value={option.value}
                 onChange={(e) =>
                   handleOptionChange(`option${step}`, e.target.value)
                 }
               />
-              {optionValue}
+              {option.label}
             </label>
           ))}
         </div>
@@ -119,8 +117,13 @@ const Calculator = ({ CalculationOptions }) => {
 Calculator.propTypes = {
   CalculationOptions: PropTypes.arrayOf(
     PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      values: PropTypes.arrayOf(PropTypes.string).isRequired,
+      question: PropTypes.string.isRequired,
+      options: PropTypes.arrayOf(
+        PropTypes.shape({
+          label: PropTypes.string.isRequired,
+          value: PropTypes.number.isRequired,
+        })
+      ).isRequired,
     })
   ).isRequired,
 };
