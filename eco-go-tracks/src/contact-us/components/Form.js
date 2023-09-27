@@ -7,13 +7,13 @@ const Form = () => {
     <div classNameName="container">
       <div className="center BGgray">
         <div className="row">
-          <div className="col-md-12">
-            <h1>Need Info! Contact Us </h1>
+          <div className="contactheading col-12">
+            <h1>For More Info, Use the Contact Form Provided.</h1>
           </div>
         </div>
       </div>
       <div classNameName="row">
-        <div classNameName="col-md-12">
+        <div classNameName="col-12">
           <form>
             <div className="form-row">
               <div className="form-group col-12">
@@ -22,7 +22,7 @@ const Form = () => {
                   type="text"
                   className="form-control"
                   id="name"
-                  placeholder="Name"
+                  placeholder="Enter your name"
                 />
               </div>
               <div className="form-group col-12">
@@ -31,7 +31,7 @@ const Form = () => {
                   type="email"
                   className="form-control"
                   id="inputEmail4"
-                  placeholder="Email"
+                  placeholder="Enter your email"
                 />
               </div>
             </div>
@@ -41,7 +41,7 @@ const Form = () => {
                 type="text"
                 className="form-control"
                 id="inputAddress"
-                placeholder="1234 Main St"
+                placeholder="Enter your address"
               />
             </div>
             <div className="form-group col-12">
@@ -51,18 +51,14 @@ const Form = () => {
                 type="message"
                 className="form-control"
                 id="inputmessage"
-                placeholder="text message"
+                placeholder="Write your message here"
               ></textarea>
             </div>
 
             <div className="form-group">
               <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="gridCheck"
-                />
-                <label className="form-check-label" for="gridCheck">
+                <input className="form-check-input" type="checkbox" />
+                <label className="form-check-label">
                   Accept our terms and conditions!
                 </label>
               </div>
