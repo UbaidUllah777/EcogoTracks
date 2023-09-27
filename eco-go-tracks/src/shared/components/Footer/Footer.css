@@ -16,13 +16,20 @@
 .footerLinksRow{
     padding-bottom: 20px;
 }
-.footerList{
+.footerList li {
     list-style: none;
-}
-.footerList li:hover{
+  }
+  
+  .footerList li a {
+    text-decoration: none;
+    color: #ffffff; /* Set your desired default color */
+  }
+  
+  .footerList li a:hover {
     color: #ca477d;
     cursor: pointer;
-}
+  }
+
 
 .copyRightRow{
     background-color: #284662;

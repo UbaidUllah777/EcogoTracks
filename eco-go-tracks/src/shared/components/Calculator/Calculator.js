@@ -138,7 +138,7 @@ const Calculator = ({ CalculationOptions }) => {
 
       {result !== null && (
         <div>
-          <h3 className="globalHeading3Primary">
+          <h3 className="globalHeading3Primary  mt-5">
             Calculated Carbon Footprint:
           </h3>
           <p>{result} units</p>

@@ -13,6 +13,7 @@ import Users from "./user/pages/Users";
 import Home from "./home/pages/Home";
 import AboutUs from "./about-us/pages/AboutUS";
 import ContactUS from "./contact-us/pages/ContactUs";
+import CalculatorPage from "./calculator/pages/CalculatorPage";
 
 //>>COMPONENTS
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
@@ -38,7 +39,7 @@ function App() {
             <Users />
           </Route>
           <Route path="/calculator">
-            <h1>Calculator Page</h1>
+            <CalculatorPage />
           </Route>
           <Route path="/contact-us">
             <ContactUS />

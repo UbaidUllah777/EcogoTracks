@@ -6,6 +6,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import Button from "../UIElements/Button";
+import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
@@ -18,10 +19,26 @@ const Footer = () => {
         <div className="col-md-4">
           <h3 className="footerMenuHeading">Useful Links</h3>
           <ul className="footerList">
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Calculator</li>
+            <li>
+              <Link to="/" className="footerLink">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/about-us" className="footerLink">
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact-us" className="footerLink">
+                Contact Us
+              </Link>
+            </li>
+            <li>
+              <Link to="/calculator" className="footerLink">
+                Calculator
+              </Link>
+            </li>
           </ul>
         </div>
         <div className="col-md-4">
@@ -30,19 +47,38 @@ const Footer = () => {
             Incididunt sit laborum mollit velit consectetur dolore. Irure et
             ipsum culpa exercitation exercitation aute.
           </p>
-          <Button
-            to="/about-us"
-            className="primary-button"
-            buttonText="Calculate Now"
-            style={{ marginBottom: "30px" }}
-          />
+          <Link to="/calculator" style={{ textDecoration: "none" }}>
+            <Button
+              to="/calculator"
+              className="primary-button"
+              buttonText="Calculate Now"
+            />
+          </Link>
         </div>
         <div className="col-md-4">
           <h3 className="footerMenuHeading">We Are Social</h3>
           <div className="social-icons">
-            <FontAwesomeIcon icon={faFacebook} />
-            <FontAwesomeIcon icon={faTwitter} />
-            <FontAwesomeIcon icon={faInstagram} />
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
           </div>
         </div>
       </div>
