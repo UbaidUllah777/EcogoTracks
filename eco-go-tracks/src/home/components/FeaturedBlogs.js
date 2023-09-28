@@ -7,7 +7,7 @@ import "./FeaturedBlogs.css";
 const FeaturedBlogs = () => {
   return (
     <Fragment>
-      <div className="container-fluid featuredblog">
+      <div className="container featuredblog">
         <div className="container">
           <div className="row">
             <div className="col-md-8">

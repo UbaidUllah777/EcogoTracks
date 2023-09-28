@@ -78,7 +78,7 @@ const WhoWeAre = () => {
       </div>
       <HR />
       <div className="container center ">
-        <div className="row">
+        <div className="row pt-5 pb-5">
           <div className="col-md-6">
             <h1 className="globalHeading2">
               Calculate Your Ecological Footprint

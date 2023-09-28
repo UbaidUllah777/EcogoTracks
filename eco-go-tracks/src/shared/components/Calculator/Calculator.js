@@ -77,31 +77,42 @@ const Calculator = ({ CalculationOptions }) => {
     <div className="container BGgray ">
       <div className="row center">
         <div className="col blink">
-          <h2 className="globalHeading2 blinking-text">
+          <h2 className="calculatorHeading blinking-text">
             Carbon Footprint Calculator
           </h2>
         </div>
       </div>
 
       {step === 1 && (
-        <div>
-          <h3 className="globalHeading4Primary mt-5">
-            Step 1: Select Data Frequency
-          </h3>
-          <label>
-            <div className="custom-select">
-              <select
-                className="combobox"
-                onChange={(e) => handleDataFrequencySelect(e.target.value)}
-              >
-                <option value="">Select data frequency:</option>
-                <option value="daily">Daily</option>
-                <option value="weekly">Weekly</option>
-                <option value="monthly">Monthly</option>
-              </select>
-            </div>
-          </label>
+        <div className="row">
+          <div className="col-12">
+            <h3 className="globalHeading4Primary mt-5">
+              Step 1: Select Data Frequency
+            </h3>
+            <label>
+              <div className="custom-select">
+                <select
+                  className="combobox"
+                  onChange={(e) => handleDataFrequencySelect(e.target.value)}
+                >
+                  <option key={"select"} value="">
+                    Select data frequency:
+                  </option>
+                  <option key={"daily"} value="daily">
+                    Daily
+                  </option>
+                  <option key={"weekly"} value="weekly">
+                    Weekly
+                  </option>
+                  <option key={"monthly"} value="monthly">
+                    Monthly
+                  </option>
+                </select>
+              </div>
+            </label>
+          </div>
         </div>
+        // RowEND
       )}
 
       {step !== 1 && step <= optionCount && (
@@ -110,7 +121,7 @@ const Calculator = ({ CalculationOptions }) => {
             Step {step}: {CalculationOptions[step - 2].question}
           </h3>
           {CalculationOptions[step - 2].options.map((option) => (
-            <div key={option.value} className="calculator-option-label">
+            <div key={option.label} className="calculator-option-label">
               <input
                 type="radio"
                 name={`option${step}`}

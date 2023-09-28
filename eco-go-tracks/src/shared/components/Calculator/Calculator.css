@@ -16,7 +16,7 @@
 }
 
 .custom-select {
-    min-width: 350px;
+    max-width: 350px;
   }
   
   .combobox {
@@ -25,8 +25,8 @@
     -webkit-appearance: none;
     /* other styles for aesthetics */
     width: 100%;
-    font-size: 1.15rem;
-    padding: 0.675em 6em 0.675em 1em;
+    font-size: 1.05rem;
+    padding: 0.675em 1em 0.675em 1em;
     background-color: #fff;
     border: 1px solid #caced1;
     border-radius: 0.25rem;
@@ -52,7 +52,12 @@
     margin-top: 10px;
   }
   .calculator-option-label{
-      font-size: 16px;
+      font-size: 14px;
       padding: 2px;
   }
   
+
+  .calculatorHeading{
+    margin: 15px 0px;
+    color: #ca477d;
+  }

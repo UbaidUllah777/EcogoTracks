@@ -4,14 +4,14 @@ import "./GlobalFacts.css";
 const GlobalFacts = () => {
   return (
     <div className="container">
-      <div className="row center pb-5">
+      <div className="row center pb-5 p">
         <div className="col-md-12">
           <h1 className="globalHeading2">
             Gobal insights About Carbon Emissions
           </h1>
         </div>
       </div>
-      <div className="row pb-5">
+      <div className="row pb-5 mx-2">
         <div className="col-md-8 vertical-line">
           <p>
             <span className="primary-color boldText">Carbon emissions</span>,
@@ -35,7 +35,7 @@ const GlobalFacts = () => {
         </div>
       </div>
 
-      <div className="row pb-5">
+      <div className="row pb-5  mx-2">
         <div className="col-md-8 vertical-line">
           <p>
             <span className="primary-color boldText">
@@ -61,7 +61,7 @@ const GlobalFacts = () => {
         </div>
       </div>
 
-      <div className="row pb-5">
+      <div className="row pb-5  mx-2">
         <div className="col-md-8 vertical-line">
           <p>
             <span className="primary-color boldText">
