@@ -8,7 +8,7 @@ const ContactUS = () => {
   const pageInfo = "Home/Contact Us"; // Page information for AboutUs page
   const heading = "Contact Us"; // Heading for the banner
   const description =
-    "Connect with us easily through our contact page. Reach out, ask questions, or share feedback. We're here to listen and respond"; // Description for the banner
+    "Connect with us easily through our contact page. Reach out, ask questions, or share feedback. We're here to listen and respond "; // Description for the banner
 
   return (
     <Fragment>
