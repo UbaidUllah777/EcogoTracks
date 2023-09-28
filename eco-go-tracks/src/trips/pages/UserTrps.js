@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 //  2- **** LOCAL FILES/COMPONENTS ***
 import TripList from "../components/TripList";
+import NewTrip from "../components/NewTrip";
 
 //  3- *** STYLING ***
 
@@ -37,7 +38,12 @@ const DUMMY_TRIPS = [
 const UserTrips = () => {
   const userId = useParams().userId;
   const loadTrips = DUMMY_TRIPS.filter((trip) => trip.creator === userId);
-  return <TripList items={loadTrips} />;
+  return (
+    <React.Fragment>
+      <NewTrip />
+      <TripList items={loadTrips} />;
+    </React.Fragment>
+  );
 };
 
 export default UserTrips;
