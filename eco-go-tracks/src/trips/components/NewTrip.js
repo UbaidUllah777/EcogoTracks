@@ -58,9 +58,14 @@ const NewTrip = () => {
     });
   }, []);
 
+  const tripSubmitHandler = (event) => {
+    event.preventDefault();
+    console.log(formState.inputs); //latter i will send it to the backend whoch is my firebase
+  };
+
   return (
     <React.Fragment>
-      <form className="trip-form">
+      <form className="trip-form" onSubmit={tripSubmitHandler}>
         <h2 className="globalHeading3">Add new Trip</h2>
         <Input
           id="title"
@@ -72,11 +77,43 @@ const NewTrip = () => {
           onInput={inputHandler}
         />
         <Input
+          id="tripStartsFrom"
+          element="input"
+          label="Trip Starts From"
+          validators={[VALIDATOR_REQUIRE()]}
+          errorText="Please enter a valid Start Place"
+          onInput={inputHandler}
+        />
+        <Input
+          id="tripEndsAt"
+          element="input"
+          label="Trip Ends At"
+          validators={[VALIDATOR_REQUIRE()]}
+          errorText="Please enter a valid End Place"
+          onInput={inputHandler}
+        />
+        <Input
+          id="totalDistance"
+          element="input"
+          label="Total Distance (KM)"
+          validators={[VALIDATOR_REQUIRE()]}
+          errorText="Please enter a valid value"
+          onInput={inputHandler}
+        />
+        <Input
+          id="type"
+          element="input"
+          label="Type"
+          validators={[VALIDATOR_REQUIRE()]}
+          errorText="Please Select a type"
+          onInput={inputHandler}
+        />
+        <Input
           id="description"
           element="textarea"
           label="Description"
           validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(10)]}
-          errorText="Please Enter atleast 10 characters"
+          errorText="Please enter atleast 10 characters"
           onInput={inputHandler}
         />
         <Button type="submit" disabled={!formState.isValid}>
