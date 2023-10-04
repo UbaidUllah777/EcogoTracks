@@ -11,13 +11,50 @@ import NewTrip from "../components/NewTrip";
 const DUMMY_TRIPS = [
   {
     id: "trip1",
-    title: "First Trip",
+    title:
+      "First Trip Nostrud exercitation do laborum  Nostrud exercitation do laborum Nostrud exercitation do laborum Nostrud exercitation do laborum ",
     description: `Nostrud exercitation do laborum magna ex occaecat aliqua culpa fugiat 
     commodo eiusmod officia occaecat exercitation.`,
     creator: "u1",
   },
   {
     id: "trip2",
+    title: "Second Trip",
+    description: `
+    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
+     aliqua anim excepteur aute sit officia.
+    `,
+    creator: "u1",
+  },
+  {
+    id: "trip2a",
+    title: "Second Trip",
+    description: `
+    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
+     aliqua anim excepteur aute sit officia.
+    `,
+    creator: "u1",
+  },
+  {
+    id: "trip3",
+    title: "Second Trip",
+    description: `
+    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
+     aliqua anim excepteur aute sit officia.
+    `,
+    creator: "u1",
+  },
+  {
+    id: "trip4",
+    title: "Second Trip",
+    description: `
+    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
+     aliqua anim excepteur aute sit officia.
+    `,
+    creator: "u1",
+  },
+  {
+    id: "trip5",
     title: "Second Trip",
     description: `
     Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo

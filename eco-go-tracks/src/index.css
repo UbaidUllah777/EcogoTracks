@@ -108,3 +108,22 @@ p {
   opacity: 0;
   transition: all 200ms;
 }
+.showFourRows{
+   
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* Limit to 4 lines */
+        -webkit-box-orient: vertical;
+}
+.cardCustomHeight{
+  max-height: 20em;
+}
+.tripheadingContainer{
+  height: 3rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical;
+}

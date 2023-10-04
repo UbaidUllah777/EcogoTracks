@@ -26,15 +26,17 @@ const TripList = (props) => {
 
   return (
     <ul className="trip-list">
-      {props.items.map((trip) => (
-        <TripItem
-          key={trip.id}
-          id={trip.id}
-          title={trip.title}
-          description={trip.description}
-          creatorId={trip.creatorId}
-        />
-      ))}
+      <div className="row">
+        {props.items.map((trip) => (
+          <TripItem
+            key={trip.id}
+            id={trip.id}
+            title={trip.title}
+            description={trip.description}
+            creatorId={trip.creatorId}
+          />
+        ))}
+      </div>
     </ul>
   );
 };

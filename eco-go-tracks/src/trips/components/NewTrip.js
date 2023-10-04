@@ -1,8 +1,8 @@
-import React, { useCallback, useReducer } from "react";
+import React from "react";
 
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
-
+import { useForm } from "../../shared/hooks/form-hook";
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
@@ -10,34 +10,9 @@ import {
 
 import "./NewTrip.css";
 
-const formReducer = (state, action) => {
-  switch (action.type) {
-    case "INPUT_CHANGE":
-      let formIsValid = true;
-      for (const inputId in state.inputs) {
-        if (inputId === action.inputId) {
-          formIsValid = formIsValid && action.isValid;
-        } else {
-          formIsValid = formIsValid && state.inputs[inputId].isValid;
-        }
-      }
-      return {
-        ...state,
-        inputs: {
-          ...state.inputs,
-          [action.inputId]: { value: action.value, isValid: action.isValid },
-        },
-        isValid: formIsValid,
-      };
-
-    default:
-      return state;
-  }
-};
-
 const NewTrip = () => {
-  const [formState, dispatch] = useReducer(formReducer, {
-    inputs: {
+  const [formState, inputHandler] = useForm(
+    {
       title: {
         value: "",
         isValid: false,
@@ -47,16 +22,8 @@ const NewTrip = () => {
         isValid: false,
       },
     },
-    isValid: false,
-  });
-  const inputHandler = useCallback((id, value, isValid) => {
-    dispatch({
-      type: "INPUT_CHANGE",
-      value: value,
-      isValid: isValid,
-      inputId: id,
-    });
-  }, []);
+    false
+  );
 
   const tripSubmitHandler = (event) => {
     event.preventDefault();
@@ -79,7 +46,7 @@ const NewTrip = () => {
         <Input
           id="tripStartsFrom"
           element="input"
-          label="Trip Starts From"
+          label="Trip Starts From (Location Name)"
           validators={[VALIDATOR_REQUIRE()]}
           errorText="Please enter a valid Start Place"
           onInput={inputHandler}
@@ -87,13 +54,14 @@ const NewTrip = () => {
         <Input
           id="tripEndsAt"
           element="input"
-          label="Trip Ends At"
+          label="Trip Ends At (Location Name)"
           validators={[VALIDATOR_REQUIRE()]}
           errorText="Please enter a valid End Place"
           onInput={inputHandler}
         />
         <Input
           id="totalDistance"
+          type="number"
           element="input"
           label="Total Distance (KM)"
           validators={[VALIDATOR_REQUIRE()]}
@@ -101,11 +69,10 @@ const NewTrip = () => {
           onInput={inputHandler}
         />
         <Input
-          id="type"
-          element="input"
-          label="Type"
-          validators={[VALIDATOR_REQUIRE()]}
-          errorText="Please Select a type"
+          id="commuteType"
+          element="select"
+          label="Please Select your Commute type"
+          validators={[]}
           onInput={inputHandler}
         />
         <Input

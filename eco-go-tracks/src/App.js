@@ -15,6 +15,7 @@ import AboutUs from "./about-us/pages/AboutUS";
 import ContactUS from "./contact-us/pages/ContactUs";
 import CalculatorPage from "./calculator/pages/CalculatorPage";
 import UserTrips from "./trips/pages/UserTrps";
+import UpdateTrip from "./trips/pages/UpdateTrip";
 
 //>>COMPONENTS
 
@@ -42,6 +43,9 @@ function App() {
           </Route>
           <Route path="/:userId/trips" exact>
             <UserTrips />
+          </Route>
+          <Route path="/updateTrip/:tripId" exact>
+            <UpdateTrip />
           </Route>
           <Route path="/calculator" exact>
             <CalculatorPage />
