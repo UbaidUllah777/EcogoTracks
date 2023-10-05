@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 // Local Components
 import Card from "../../shared/components/UIElements/Card";
 import Button from "../../shared/components/FormElements/Button";
 import Modal from "../../shared/components/UIElements/Modal";
+import { AuthContext } from "../../shared/context/auth-context";
 
 import "./TripItem.css";
 
 const TripItem = (props) => {
+  const auth = useContext(AuthContext);
+
   const [showConfirmModal, setShowConfirmModal] = useState(false);
 
   const showDeleteWarningHandler = () => {
@@ -57,10 +60,14 @@ const TripItem = (props) => {
               <p className="showFourRows">{props.description}</p>
             </div>
             <div className="trip-item__actions">
-              <Button to={`/updateTrip/${props.id}`}>EDIT</Button>
-              <Button danger onClick={showDeleteWarningHandler}>
-                DELETE
-              </Button>
+              {auth.isLoggedIn && (
+                <Button to={`/updateTrip/${props.id}`}>EDIT</Button>
+              )}
+              {auth.isLoggedIn && (
+                <Button danger onClick={showDeleteWarningHandler}>
+                  DELETE
+                </Button>
+              )}
             </div>
           </li>
         </Card>

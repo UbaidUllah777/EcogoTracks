@@ -1,5 +1,5 @@
 // *** LIBRARIES ***
-import React from "react";
+import React, { useState, useCallback } from "react";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,48 +16,86 @@ import ContactUS from "./contact-us/pages/ContactUs";
 import CalculatorPage from "./calculator/pages/CalculatorPage";
 import UserTrips from "./trips/pages/UserTrps";
 import UpdateTrip from "./trips/pages/UpdateTrip";
+import Auth from "./user/pages/Auth";
 
-//>>COMPONENTS
-
+//Local COMPONENTS
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import Footer from "./shared/components/Footer/Footer";
+import { AuthContext } from "./shared/context/auth-context";
 
 //  *** STYLING ***
-
 import "./App.css";
 
+// Component Function
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const login = useCallback(() => {
+    setIsLoggedIn(true);
+  }, []);
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+  }, []);
+
+  let routes;
+  if (isLoggedIn) {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/about-us" exact>
+          <AboutUs />
+        </Route>
+        <Route path="/calculator" exact>
+          <CalculatorPage />
+        </Route>
+        <Route path="/contact-us" exact>
+          <ContactUS />
+        </Route>
+        <Route path="/users" exact>
+          <Users />
+        </Route>
+        <Route path="/:userId/trips" exact>
+          <UserTrips />
+        </Route>
+        <Route path="/updateTrip/:tripId" exact>
+          <UpdateTrip />
+        </Route>
+        <Redirect to="/" />
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/about-us" exact>
+          <AboutUs />
+        </Route>
+        <Route path="/calculator" exact>
+          <CalculatorPage />
+        </Route>
+        <Route path="/contact-us" exact>
+          <ContactUS />
+        </Route>
+        <Route path="/auth" exact>
+          <Auth />
+        </Route>
+        <Redirect to="/auth" />
+      </Switch>
+    );
+  }
   return (
-    <Router>
-      <MainNavigation />
-      <main>
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/about-us" exact>
-            <AboutUs />
-          </Route>
-          <Route path="/users" exact>
-            <Users />
-          </Route>
-          <Route path="/:userId/trips" exact>
-            <UserTrips />
-          </Route>
-          <Route path="/updateTrip/:tripId" exact>
-            <UpdateTrip />
-          </Route>
-          <Route path="/calculator" exact>
-            <CalculatorPage />
-          </Route>
-          <Route path="/contact-us" exact>
-            <ContactUS />
-          </Route>
-          <Redirect to="/" />
-        </Switch>
-      </main>
-      <Footer />
-    </Router>
+    <AuthContext.Provider
+      value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
+    >
+      <Router>
+        <MainNavigation />
+        <main>{routes}</main>
+        <Footer />
+      </Router>
+    </AuthContext.Provider>
   );
 }
 

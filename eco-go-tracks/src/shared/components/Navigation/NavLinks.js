@@ -1,13 +1,16 @@
 // *** LIBRARIES ***
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 
 //  **** LOCAL FILES/COMPONENTS ***
-
+import { AuthContext } from "../../context/auth-context";
+import Button from "../FormElements/Button";
 //  *** STYLING ***
 import "./NavLinks.css";
 
 const NavLinks = (props) => {
+  const auth = useContext(AuthContext);
+
   return (
     <ul className="nav-links">
       <li>
@@ -24,12 +27,21 @@ const NavLinks = (props) => {
       <li>
         <NavLink to="/contact-us">Contact Us</NavLink>
       </li>
-      <li>
-        <NavLink to="/userId/trips">User Trips</NavLink>
-      </li>
-      <li>
-        <NavLink to="login">Login</NavLink>
-      </li>
+      {auth.isLoggedIn && (
+        <li>
+          <NavLink to="/userId/trips">User Trips</NavLink>
+        </li>
+      )}
+      {!auth.isLoggedIn && (
+        <li>
+          <NavLink to="/auth">Authenticate</NavLink>
+        </li>
+      )}
+      {auth.isLoggedIn && (
+        <li>
+          <Button onClick={auth.logout}>Logout</Button>
+        </li>
+      )}
     </ul>
   );
 };
