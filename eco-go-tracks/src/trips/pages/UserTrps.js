@@ -11,8 +11,7 @@ import NewTrip from "../components/NewTrip";
 const DUMMY_TRIPS = [
   {
     id: "trip1",
-    title:
-      "First Trip Nostrud exercitation do laborum  Nostrud exercitation do laborum Nostrud exercitation do laborum Nostrud exercitation do laborum ",
+    title: "First Trip",
     description: `Nostrud exercitation do laborum magna ex occaecat aliqua culpa fugiat 
     commodo eiusmod officia occaecat exercitation.`,
     creator: "u1",

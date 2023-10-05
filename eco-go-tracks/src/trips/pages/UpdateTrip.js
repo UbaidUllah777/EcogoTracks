@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 // Local Components
 import Input from "../../shared/components/FormElements/Input";
 import Button from "../../shared/components/FormElements/Button";
-import { useForm } from "../../shared/hooks/form-hook";
+import Card from "../../shared/components/UIElements/Card";
 import {
   VALIDATOR_REQUIRE,
   VALIDATOR_MINLENGTH,
 } from "../../shared/util/validators";
+
+// CUSTOM HOOKS
+import { useForm } from "../../shared/hooks/form-hook";
 
 // Styling
 import "./TripForm.css";
@@ -16,8 +19,7 @@ import "./TripForm.css";
 const DUMMY_TRIPS = [
   {
     id: "trip1",
-    title:
-      "First Trip Nostrud exercitation do laborum  Nostrud exercitation do laborum Nostrud exercitation do laborum Nostrud exercitation do laborum ",
+    title: "First Trip",
     description: `Nostrud exercitation do laborum magna ex occaecat aliqua culpa fugiat 
     commodo eiusmod officia occaecat exercitation.`,
     creator: "u1",
@@ -78,22 +80,42 @@ const DUMMY_TRIPS = [
 ];
 
 const UpdateTrip = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const tripId = useParams().tripId;
 
-  const identifiedTrip = DUMMY_TRIPS.find((t) => t.id === tripId);
-  const [formState, inputHandler] = useForm(
+  const [formState, inputHandler, setFormData] = useForm(
     {
       title: {
-        value: identifiedTrip.title,
-        isValid: true,
+        value: "",
+        isValid: false,
       },
       description: {
-        value: identifiedTrip.description,
-        isValid: true,
+        value: "",
+        isValid: false,
       },
     },
-    true
+    false
   );
+
+  const identifiedTrip = DUMMY_TRIPS.find((t) => t.id === tripId);
+  useEffect(() => {
+    if (identifiedTrip) {
+      setFormData(
+        {
+          title: {
+            value: identifiedTrip.title,
+            isValid: true,
+          },
+          description: {
+            value: identifiedTrip.description,
+            isValid: true,
+          },
+        },
+        true
+      );
+    }
+    setIsLoading(false);
+  }, [setFormData, identifiedTrip]);
 
   const tripUpdateSubmitHandler = (event) => {
     event.preventDefault();
@@ -103,9 +125,23 @@ const UpdateTrip = () => {
   if (!identifiedTrip) {
     return (
       <div className="center">
-        <h1>Could not find the Trip</h1>;
+        <Card
+          style={{ maxWidth: "40em", marginLeft: "25%", marginRight: "25%" }}
+        >
+          <h1>Could not find the Trip</h1>
+        </Card>
       </div>
     );
+  }
+
+  if (isLoading) {
+    {
+      return (
+        <div className="center">
+          <h1>Lodaing... </h1>;
+        </div>
+      );
+    }
   }
   return (
     <form className="trip-form" onSubmit={tripUpdateSubmitHandler}>
