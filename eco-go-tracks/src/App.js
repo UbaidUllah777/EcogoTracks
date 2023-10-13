@@ -15,6 +15,7 @@ import AboutUs from "./about-us/pages/AboutUS";
 import ContactUS from "./contact-us/pages/ContactUs";
 import CalculatorPage from "./calculator/pages/CalculatorPage";
 import UserTrips from "./trips/pages/UserTrps";
+import AddTrip from "./trips/pages/NewTrip";
 import UpdateTrip from "./trips/pages/UpdateTrip";
 import Auth from "./user/pages/Auth";
 
@@ -29,11 +30,15 @@ import "./App.css";
 // Component Function
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const login = useCallback(() => {
+  const [userId, setUserId] = useState(false);
+
+  const login = useCallback((uid) => {
     setIsLoggedIn(true);
+    setUserId(uid);
   }, []);
   const logout = useCallback(() => {
     setIsLoggedIn(false);
+    setUserId(null);
   }, []);
 
   let routes;
@@ -55,7 +60,10 @@ function App() {
         <Route path="/users" exact>
           <Users />
         </Route>
-        <Route path="/:userId/trips" exact>
+        <Route path="/trips/new" exact>
+          <AddTrip />
+        </Route>
+        <Route path="/:userId/trips/" exact>
           <UserTrips />
         </Route>
         <Route path="/updateTrip/:tripId" exact>
@@ -88,7 +96,12 @@ function App() {
   }
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
+      value={{
+        isLoggedIn: isLoggedIn,
+        userId: userId,
+        login: login,
+        logout: logout,
+      }}
     >
       <Router>
         <MainNavigation />

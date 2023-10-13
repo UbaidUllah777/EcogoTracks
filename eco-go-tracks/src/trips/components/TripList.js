@@ -11,11 +11,11 @@ import "./TripList.css";
 const TripList = (props) => {
   if (props.items.length === 0) {
     return (
-      <div className="trip-list center">
+      <div className="trip-list center mt-5 pt-5">
         <Card>
           <h2>No Trips ...</h2>
           <Button
-            to="/about-us"
+            to="/trips/new"
             className="secondary-button"
             buttonText="Add New Trip"
           />
