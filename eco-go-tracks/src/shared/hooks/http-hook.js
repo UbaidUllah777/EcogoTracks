@@ -47,9 +47,11 @@ export const useHttpClient = () => {
 
   useEffect(() => {
     return () => {
-      activeHttpRequests.current.forEach((abortCtrl) =>
-        abortCtrl.abortCtrl.abort()
-      );
+      activeHttpRequests.current.forEach((abortCtrl) => {
+        if (abortCtrl === undefined) {
+          abortCtrl.abort();
+        }
+      });
     };
   }, []);
   return {

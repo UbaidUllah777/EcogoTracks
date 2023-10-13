@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useParams, useHistory } from "react-router-dom";
 
 // Local Components
 import Input from "../../shared/components/FormElements/Input";
@@ -12,76 +12,21 @@ import {
 
 // CUSTOM HOOKS
 import { useForm } from "../../shared/hooks/form-hook";
+import { useHttpClient } from "../../shared/hooks/http-hook";
+import { AuthContext } from "../../shared/context/auth-context";
 
 // Styling
 import "./TripForm.css";
-
-const DUMMY_TRIPS = [
-  {
-    id: "trip1",
-    title: "First Trip",
-    description: `Nostrud exercitation do laborum magna ex occaecat aliqua culpa fugiat 
-    commodo eiusmod officia occaecat exercitation.`,
-    creator: "u1",
-  },
-  {
-    id: "trip2",
-    title: "Second Trip",
-    description: `
-    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
-     aliqua anim excepteur aute sit officia.
-    `,
-    creator: "u1",
-  },
-  {
-    id: "trip2a",
-    title: "Second Trip",
-    description: `
-    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
-     aliqua anim excepteur aute sit officia.
-    `,
-    creator: "u1",
-  },
-  {
-    id: "trip3",
-    title: "Second Trip",
-    description: `
-    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
-     aliqua anim excepteur aute sit officia.
-    `,
-    creator: "u1",
-  },
-  {
-    id: "trip4",
-    title: "Second Trip",
-    description: `
-    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
-     aliqua anim excepteur aute sit officia.
-    `,
-    creator: "u1",
-  },
-  {
-    id: "trip5",
-    title: "Second Trip",
-    description: `
-    Dolore in elit ipsum sit fugiat irure.Veniam amet ipsum eiusmod commodo deserunt commodo
-     aliqua anim excepteur aute sit officia.
-    `,
-    creator: "u1",
-  },
-  {
-    id: "trip3",
-    title: "Third Trip",
-    description: `
-     Tempor ea adipisicing nisi adipisicing excepteur esse commodo aliqua enim nisi.
-     `,
-    creator: "u2",
-  },
-];
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 
 const UpdateTrip = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const auth = useContext(AuthContext);
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
+  const [loadedTrip, setLoadedtrip] = useState();
+
   const tripId = useParams().tripId;
+  const history = useHistory();
 
   const [formState, inputHandler, setFormData] = useForm(
     {
@@ -97,32 +42,58 @@ const UpdateTrip = () => {
     false
   );
 
-  const identifiedTrip = DUMMY_TRIPS.find((t) => t.id === tripId);
   useEffect(() => {
-    if (identifiedTrip) {
-      setFormData(
-        {
-          title: {
-            value: identifiedTrip.title,
-            isValid: true,
+    const fetchTrip = async () => {
+      try {
+        const responseData = await sendRequest(
+          `http://localhost:5000/api/trips/${tripId}`
+        );
+        setLoadedtrip(responseData.trip);
+        setFormData(
+          {
+            title: {
+              value: responseData.trip.title,
+              isValid: true,
+            },
+            description: {
+              value: responseData.trip.description,
+              isValid: true,
+            },
           },
-          description: {
-            value: identifiedTrip.description,
-            isValid: true,
-          },
-        },
-        true
-      );
-    }
-    setIsLoading(false);
-  }, [setFormData, identifiedTrip]);
+          true
+        );
+      } catch (err) {}
+    };
+    fetchTrip();
+  }, [sendRequest, tripId, setFormData]);
 
-  const tripUpdateSubmitHandler = (event) => {
+  const tripUpdateSubmitHandler = async (event) => {
     event.preventDefault();
-    console.log(formState.inputs);
+    try {
+      await sendRequest(
+        `http://localhost:5000/api/trips/${tripId}`,
+        "PATCH",
+        JSON.stringify({
+          title: formState.inputs.title.value,
+          description: formState.inputs.description.value,
+        }),
+        {
+          "Content-Type": "application/json",
+        }
+      );
+      history.push("/" + auth.userId + "/trips");
+    } catch (err) {}
   };
 
-  if (!identifiedTrip) {
+  if (isLoading) {
+    return (
+      <div className="center">
+        <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (!loadedTrip && !error) {
     return (
       <div className="center">
         <Card
@@ -134,43 +105,39 @@ const UpdateTrip = () => {
     );
   }
 
-  if (isLoading) {
-    {
-      return (
-        <div className="center">
-          <h1>Lodaing... </h1>;
-        </div>
-      );
-    }
-  }
   return (
-    <form className="trip-form" onSubmit={tripUpdateSubmitHandler}>
-      <Input
-        id="title"
-        element="input"
-        type="text"
-        label="Title"
-        validators={[VALIDATOR_REQUIRE()]}
-        errorText="Please enter a valid title"
-        onInput={inputHandler}
-        initialValue={formState.inputs.title.value}
-        initialValid={formState.inputs.title.isValid}
-      />
-      <Input
-        id="description"
-        element="textarea"
-        type="text"
-        label="Description"
-        validators={[VALIDATOR_MINLENGTH(10)]}
-        errorText="Description cannot be less than 10 chars "
-        onInput={inputHandler}
-        initialValue={formState.inputs.description.value}
-        initialValid={formState.inputs.title.isValid}
-      />
-      <Button type="submit" disabled={!formState.isValid}>
-        Update Trip
-      </Button>
-    </form>
+    <React.Fragment>
+      <ErrorModal error={error} OnClear={clearError} />
+      {!isLoading && loadedTrip && (
+        <form className="trip-form" onSubmit={tripUpdateSubmitHandler}>
+          <Input
+            id="title"
+            element="input"
+            type="text"
+            label="Title"
+            validators={[VALIDATOR_REQUIRE()]}
+            errorText="Please enter a valid title"
+            onInput={inputHandler}
+            initialValue={loadedTrip.title}
+            initialValid={true}
+          />
+          <Input
+            id="description"
+            element="textarea"
+            type="text"
+            label="Description"
+            validators={[VALIDATOR_MINLENGTH(10)]}
+            errorText="Description cannot be less than 10 chars "
+            onInput={inputHandler}
+            initialValue={loadedTrip.description}
+            initialValid={formState.inputs.title.isValid}
+          />
+          <Button type="submit" disabled={!formState.isValid}>
+            Update Trip
+          </Button>
+        </form>
+      )}
+    </React.Fragment>
   );
 };
 

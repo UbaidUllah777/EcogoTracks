@@ -81,7 +81,7 @@ const Auth = () => {
         );
 
         auth.login(responseData.user.id);
-        console.log(responseData.user.id);
+        console.log("The User id after loging In", responseData.user.id);
       } catch (err) {}
     }
 
