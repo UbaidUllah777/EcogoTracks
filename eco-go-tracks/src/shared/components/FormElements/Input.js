@@ -67,11 +67,11 @@ const Input = (props) => {
         onBlur={touchHandler}
         value={inputState.value}
       >
-        <option value="0">Walking</option>
-        <option value="0">Cycling</option>
-        <option value="1">ECO Friendly Bus</option>
-        <option value="2">Car</option>
-        <option value="3">Train</option>
+        <option value="Walking">Walking</option>
+        <option value="Cycling">Cycling</option>
+        <option value="ECOFriendlyBus">ECO Friendly Bus</option>
+        <option value="Car">Car</option>
+        <option value="Train">Train</option>
       </select>
     ) : (
       <textarea

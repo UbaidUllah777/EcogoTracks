@@ -5,10 +5,14 @@ import Card from "../../shared/components/UIElements/Card";
 import Button from "../../shared/components/FormElements/Button";
 import Modal from "../../shared/components/UIElements/Modal";
 import { AuthContext } from "../../shared/context/auth-context";
+import { useHttpClient } from "../../shared/hooks/http-hook";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
 import "./TripItem.css";
 
 const TripItem = (props) => {
+  const { isLoading, error, sendRequest, clearError } = useHttpClient();
   const auth = useContext(AuthContext);
 
   const [showConfirmModal, setShowConfirmModal] = useState(false);
@@ -21,13 +25,20 @@ const TripItem = (props) => {
     setShowConfirmModal(false);
   };
 
-  const confirmDeleteHandler = () => {
+  const confirmDeleteHandler = async () => {
     setShowConfirmModal(false);
-    console.log("DELETING...");
+    try {
+      await sendRequest(
+        `http://localhost:5000/api/trips/${props.id}`,
+        "DELETE"
+      );
+      props.onDelete(props.id);
+    } catch (err) {}
   };
 
   return (
     <React.Fragment>
+      <ErrorModal error={error} onClear={clearError} />
       <Modal
         show={showConfirmModal}
         onCancel={cancelDeleteHandler}
@@ -51,13 +62,90 @@ const TripItem = (props) => {
       </Modal>
       <div className="col-md-6 col-lg-4 ">
         <Card className="trip-item__content mt-5 cardCustomHeight">
+          {isLoading && <LoadingSpinner asOverlay />}
           <li className="trip-item">
             <div className="trip-item__info ">
               <div className="tripheadingContainer">
                 <h2 className="sub-heading">{props.title}</h2>
               </div>
+              <div className="row">
+                <div className="col-md-6 col-12">
+                  <p
+                    style={{ paddingBottom: "2px" }}
+                    className="sub-heading boldText"
+                  >
+                    From :{" "}
+                  </p>
+                </div>
+                <div className="col-md-6 col-12">
+                  <p style={{ paddingBottom: "2px", fontSize: "1rem" }}>
+                    {props.tripFrom}
+                  </p>
+                </div>
+              </div>
 
-              <p className="showFourRows">{props.description}</p>
+              <div className="row">
+                <div className="col-md-6 col-12">
+                  <p
+                    style={{ paddingBottom: "2px" }}
+                    className="sub-heading boldText"
+                  >
+                    To :{" "}
+                  </p>
+                </div>
+                <div className="col-md-6 col-12">
+                  <p style={{ paddingBottom: "2px", fontSize: "1rem" }}>
+                    {props.tripTo}
+                  </p>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-md-6 col-12">
+                  <p
+                    style={{ paddingBottom: "2px" }}
+                    className="sub-heading boldText"
+                  >
+                    Distance :{" "}
+                  </p>
+                </div>
+                <div className="col-md-6 col-12">
+                  <p style={{ paddingBottom: "2px", fontSize: "1rem" }}>
+                    {props.totalDistance} Kms
+                  </p>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-md-6 col-12">
+                  <p
+                    style={{ paddingBottom: "2px" }}
+                    className="sub-heading boldText"
+                  >
+                    Commute Type :{" "}
+                  </p>
+                </div>
+                <div className="col-md-6 col-12">
+                  <p style={{ paddingBottom: "2px", fontSize: "1rem" }}>
+                    {props.commuteType}
+                  </p>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col-md-6 col-12">
+                  <p
+                    style={{ paddingBottom: "2px" }}
+                    className="sub-heading boldText"
+                  >
+                    Carbon Emitted :{" "}
+                  </p>
+                </div>
+                <div className="col-md-6 col-12">
+                  <p style={{ paddingBottom: "2px", fontSize: "1rem" }}>
+                    Wil be changed
+                  </p>
+                </div>
+              </div>
             </div>
             <div className="trip-item__actions">
               {auth.isLoggedIn && (

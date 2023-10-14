@@ -27,6 +27,11 @@ const UserTrips = () => {
     fetchTrips();
   }, [sendRequest, userId]);
 
+  const tripDeletedHandler = (deletedTripId) => {
+    setLoadedTrips((prevTrips) =>
+      prevTrips.filter((trip) => trip.id !== deletedTripId)
+    );
+  };
   return (
     <React.Fragment>
       <ErrorModal error={error} onClear={clearError} />
@@ -35,7 +40,10 @@ const UserTrips = () => {
           <LoadingSpinner />
         </div>
       )}
-      {!isLoading && loadedTrips && <TripList items={loadedTrips} />};
+      {!isLoading && loadedTrips && (
+        <TripList items={loadedTrips} onDeleteTrip={tripDeletedHandler} />
+      )}
+      ;
     </React.Fragment>
   );
 };

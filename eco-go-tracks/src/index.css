@@ -72,6 +72,9 @@ p {
   font-size: medium;
   margin: 20px 0px;
 }
+.boldText {
+font-weight: bold;
+}
 .main-heading {
   font-size: larger;
   margin: 20px 0px;
@@ -117,7 +120,7 @@ p {
         -webkit-box-orient: vertical;
 }
 .cardCustomHeight{
-  max-height: 20em;
+  max-height: auto;
 }
 .tripheadingContainer{
   height: 3rem;

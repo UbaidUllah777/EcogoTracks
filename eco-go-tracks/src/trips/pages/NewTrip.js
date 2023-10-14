@@ -27,7 +27,19 @@ const NewTrip = () => {
         value: "",
         isValid: false,
       },
-      description: {
+      tripFrom: {
+        value: "",
+        isValid: false,
+      },
+      tripTo: {
+        value: "",
+        isValid: false,
+      },
+      commuteType: {
+        value: "",
+        isValid: false,
+      },
+      totalDistance: {
         value: "",
         isValid: false,
       },
@@ -46,7 +58,10 @@ const NewTrip = () => {
         "POST",
         JSON.stringify({
           title: formState.inputs.title.value,
-          description: formState.inputs.description.value,
+          tripFrom: formState.inputs.tripFrom.value,
+          tripTo: formState.inputs.tripTo.value,
+          commuteType: formState.inputs.commuteType.value,
+          totalDistance: formState.inputs.totalDistance.value,
           creator: auth.userId,
         }),
         { "Content-Type": "application/json" }
@@ -80,23 +95,30 @@ const NewTrip = () => {
           errorText="Please enter a valid title"
           onInput={inputHandler}
         />
-        {/* <Input
-          id="tripStartsFrom"
+        <Input
+          id="tripFrom"
           element="input"
           label="Trip Starts From (Location Name)"
           validators={[VALIDATOR_REQUIRE()]}
-          errorText="Please enter a valid Start Place"
+          errorText="Please enter a valid trip Start location"
           onInput={inputHandler}
-        /> */}
-        {/* <Input
-          id="tripEndsAt"
+        />
+        <Input
+          id="tripTo"
           element="input"
           label="Trip Ends At (Location Name)"
           validators={[VALIDATOR_REQUIRE()]}
-          errorText="Please enter a valid End Place"
+          errorText="Please enter a valid trip ending location"
           onInput={inputHandler}
-        /> */}
-        {/* <Input
+        />
+        <Input
+          id="commuteType"
+          element="select"
+          label="Please Select your Commute type"
+          validators={[]}
+          onInput={inputHandler}
+        />
+        <Input
           id="totalDistance"
           type="number"
           element="input"
@@ -104,22 +126,8 @@ const NewTrip = () => {
           validators={[VALIDATOR_REQUIRE()]}
           errorText="Please enter a valid value"
           onInput={inputHandler}
-        /> */}
-        {/* <Input
-          id="commuteType"
-          element="select"
-          label="Please Select your Commute type"
-          validators={[]}
-          onInput={inputHandler}
-        /> */}
-        <Input
-          id="description"
-          element="textarea"
-          label="Description"
-          validators={[VALIDATOR_REQUIRE(), VALIDATOR_MINLENGTH(10)]}
-          errorText="Please enter atleast 10 characters"
-          onInput={inputHandler}
         />
+
         <Button type="submit" disabled={!formState.isValid}>
           Add Trip
         </Button>

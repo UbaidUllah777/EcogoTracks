@@ -32,8 +32,12 @@ const TripList = (props) => {
             key={trip.id}
             id={trip.id}
             title={trip.title}
-            description={trip.description}
+            tripFrom={trip.tripFrom}
+            tripTo={trip.tripTo}
+            commuteType={trip.commuteType}
+            totalDistance={trip.totalDistance}
             creatorId={trip.creatorId}
+            onDelete={props.onDeleteTrip}
           />
         ))}
       </div>
