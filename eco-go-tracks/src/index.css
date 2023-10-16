@@ -123,10 +123,16 @@ font-weight: bold;
   max-height: auto;
 }
 .tripheadingContainer{
-  height: 3rem;
+  height: 2.7rem;
+  width: 100%;
+  background-color: #ca477d;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2; 
   -webkit-box-orient: vertical;
+}
+.tripTitle{
+  color: aliceblue;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }

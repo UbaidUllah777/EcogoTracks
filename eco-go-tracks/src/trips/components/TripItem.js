@@ -63,11 +63,11 @@ const TripItem = (props) => {
       <div className="col-md-6 col-lg-4 ">
         <Card className="trip-item__content mt-5 cardCustomHeight">
           {isLoading && <LoadingSpinner asOverlay />}
+          <div className="tripheadingContainer center">
+            <h2 className="tripTitle">{props.title}</h2>
+          </div>
           <li className="trip-item">
             <div className="trip-item__info ">
-              <div className="tripheadingContainer">
-                <h2 className="sub-heading">{props.title}</h2>
-              </div>
               <div className="row">
                 <div className="col-md-6 col-12">
                   <p
