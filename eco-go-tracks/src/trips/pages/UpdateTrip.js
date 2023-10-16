@@ -34,7 +34,19 @@ const UpdateTrip = () => {
         value: "",
         isValid: false,
       },
-      description: {
+      tripFrom: {
+        value: "",
+        isValid: false,
+      },
+      tripTo: {
+        value: "",
+        isValid: false,
+      },
+      commuteType: {
+        value: "",
+        isValid: false,
+      },
+      totalDistance: {
         value: "",
         isValid: false,
       },
@@ -55,8 +67,20 @@ const UpdateTrip = () => {
               value: responseData.trip.title,
               isValid: true,
             },
-            description: {
-              value: responseData.trip.description,
+            tripFrom: {
+              value: responseData.trip.tripFrom,
+              isValid: true,
+            },
+            tripTo: {
+              value: responseData.trip.tripTo,
+              isValid: true,
+            },
+            commuteType: {
+              value: responseData.trip.commuteType,
+              isValid: true,
+            },
+            totalDistance: {
+              value: responseData.trip.totalDistance,
               isValid: true,
             },
           },
@@ -75,7 +99,10 @@ const UpdateTrip = () => {
         "PATCH",
         JSON.stringify({
           title: formState.inputs.title.value,
-          description: formState.inputs.description.value,
+          tripFrom: formState.inputs.tripFrom.value,
+          tripTo: formState.inputs.tripTo.value,
+          commuteType: formState.inputs.commuteType.value,
+          totalDistance: formState.inputs.totalDistance.value,
         }),
         {
           "Content-Type": "application/json",
@@ -122,16 +149,47 @@ const UpdateTrip = () => {
             initialValid={true}
           />
           <Input
-            id="description"
-            element="textarea"
+            id="tripFrom"
+            element="input"
             type="text"
-            label="Description"
-            validators={[VALIDATOR_MINLENGTH(10)]}
-            errorText="Description cannot be less than 10 chars "
+            label="Trip Starts From (Location Name)"
+            validators={[VALIDATOR_REQUIRE()]}
+            errorText="Please enter a valid trip Start location"
             onInput={inputHandler}
-            initialValue={loadedTrip.description}
-            initialValid={formState.inputs.title.isValid}
+            initialValue={loadedTrip.tripFrom}
+            initialValid={true}
           />
+          <Input
+            id="tripTo"
+            element="input"
+            label="Trip Ends At (Location Name)"
+            validators={[VALIDATOR_REQUIRE()]}
+            errorText="Please enter a valid trip ending location"
+            onInput={inputHandler}
+            initialValue={loadedTrip.tripTo}
+            initialValid={true}
+          />
+          <Input
+            id="commuteType"
+            element="select"
+            label="Please Select your Commute type"
+            validators={[]}
+            onInput={inputHandler}
+            initialValue={loadedTrip.commuteType}
+            initialValid={true}
+          />
+          <Input
+            id="totalDistance"
+            type="number"
+            element="input"
+            label="Total Distance (KM)"
+            validators={[VALIDATOR_REQUIRE()]}
+            errorText="Please enter a valid value"
+            onInput={inputHandler}
+            initialValue={loadedTrip.totalDistance}
+            initialValid={true}
+          />
+
           <Button type="submit" disabled={!formState.isValid}>
             Update Trip
           </Button>
