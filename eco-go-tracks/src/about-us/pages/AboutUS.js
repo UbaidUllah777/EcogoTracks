@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Banner from "../../shared/components/Banner/Banner";
 
 import aboutUsBannerImage from "../../images/aboutUsbanner.jpg";
+import AboutEcoGo from "../components/AboutEcoGo";
 
 const AboutUs = () => {
   const pageInfo = "Home/About Us"; // Page information for AboutUs page
@@ -10,12 +11,15 @@ const AboutUs = () => {
     "Learn about our dedication to providing sustainable transportation solutions that reduce the carbon footprint and contribute to a healthier planet."; // Description for the banner
 
   return (
-    <Banner
-      pageInfo={pageInfo}
-      heading={heading}
-      description={description}
-      backgroundImage={aboutUsBannerImage}
-    />
+    <Fragment>
+      <Banner
+        pageInfo={pageInfo}
+        heading={heading}
+        description={description}
+        backgroundImage={aboutUsBannerImage}
+      />
+      <AboutEcoGo />
+    </Fragment>
   );
 };
 
