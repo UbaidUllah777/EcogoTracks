@@ -37,6 +37,7 @@ const TripList = (props) => {
             commuteType={trip.commuteType}
             totalDistance={trip.totalDistance}
             creatorId={trip.creatorId}
+            carbonEmissions={trip.carbonEmissions}
             onDelete={props.onDeleteTrip}
           />
         ))}

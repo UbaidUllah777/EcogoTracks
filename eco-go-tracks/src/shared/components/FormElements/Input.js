@@ -71,6 +71,7 @@ const Input = (props) => {
         <option value="Cycling">Cycling</option>
         <option value="ECOFriendlyBus">ECO Friendly Bus</option>
         <option value="Car">Car</option>
+        <option value="Bus">Bus</option>
         <option value="Train">Train</option>
       </select>
     ) : (

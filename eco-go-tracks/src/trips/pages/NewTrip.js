@@ -49,8 +49,46 @@ const NewTrip = () => {
 
   const history = useHistory();
 
+  const calculateCarbonEmissions = (commuteType, totalDistance) => {
+    let emissionFactor = 0;
+
+    // Assign emission factor based on commute type
+    switch (commuteType) {
+      case "Walking":
+        emissionFactor = 0; // Walking does not emit CO2
+        break;
+      case "Cycling":
+        emissionFactor = 0;
+        break;
+      case "ECOFriendlyBus":
+        emissionFactor = 0.25;
+        break;
+      case "Car":
+        emissionFactor = 2.1;
+        break;
+      case "Bus":
+        emissionFactor = 1.1;
+        break;
+      case "Train":
+        emissionFactor = 3;
+        break;
+      default:
+        emissionFactor = 0;
+    }
+
+    // Calculate total carbon emissions
+    const carbonEmissions = (emissionFactor * totalDistance).toFixed(2); // up to 2 decimal places
+
+    return parseFloat(carbonEmissions); // Parse to float to remove trailing zeros
+  };
+
   const tripSubmitHandler = async (event) => {
     event.preventDefault();
+    // Calculate carbon emissions based on commute type and total distance
+    const carbonEmissions = calculateCarbonEmissions(
+      formState.inputs.commuteType.value,
+      formState.inputs.totalDistance.value
+    );
 
     try {
       await sendRequest(
@@ -63,6 +101,7 @@ const NewTrip = () => {
           commuteType: formState.inputs.commuteType.value,
           totalDistance: formState.inputs.totalDistance.value,
           creator: auth.userId,
+          carbonEmissions: carbonEmissions,
         }),
         { "Content-Type": "application/json" }
       );

@@ -110,7 +110,8 @@ const TripItem = (props) => {
                 </div>
                 <div className="col-md-6 col-12">
                   <p style={{ paddingBottom: "2px", fontSize: "1rem" }}>
-                    {props.totalDistance} Kms
+                    {props.totalDistance}{" "}
+                    <span className="sub-heading">Kms</span>
                   </p>
                 </div>
               </div>
@@ -142,7 +143,8 @@ const TripItem = (props) => {
                 </div>
                 <div className="col-md-6 col-12">
                   <p style={{ paddingBottom: "2px", fontSize: "1rem" }}>
-                    Wil be changed
+                    {props.carbonEmissions}{" "}
+                    <span className="sub-heading">kg CO2</span>
                   </p>
                 </div>
               </div>
