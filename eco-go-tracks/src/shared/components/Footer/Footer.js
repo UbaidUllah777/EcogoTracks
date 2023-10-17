@@ -44,8 +44,8 @@ const Footer = () => {
         <div className="col-md-4">
           <h3 className="footerMenuHeading">Calculate Your Footprints</h3>
           <p style={{ fontSize: "0.8rem", paddingBottom: "10px" }}>
-            Incididunt sit laborum mollit velit consectetur dolore. Irure et
-            ipsum culpa exercitation exercitation aute.
+            Discover and measure your ecological footprint with our handy
+            calculator. Calculate now and make a positive impact!
           </p>
 
           <Button
