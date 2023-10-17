@@ -1,6 +1,5 @@
 import React from "react";
 
-import Button from "../../shared/components/UIElements/Button";
 import HR from "../../shared/components/HR/HR";
 
 import "./AboutEcoGo.css";
