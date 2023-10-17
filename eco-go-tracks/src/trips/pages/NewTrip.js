@@ -61,16 +61,16 @@ const NewTrip = () => {
         emissionFactor = 0;
         break;
       case "ECOFriendlyBus":
-        emissionFactor = 0.25;
+        emissionFactor = 0.0008;
         break;
       case "Car":
-        emissionFactor = 2.1;
+        emissionFactor = 0.002;
         break;
       case "Bus":
-        emissionFactor = 1.1;
+        emissionFactor = 0.003;
         break;
       case "Train":
-        emissionFactor = 3;
+        emissionFactor = 0.00002;
         break;
       default:
         emissionFactor = 0;

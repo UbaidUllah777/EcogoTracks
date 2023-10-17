@@ -153,7 +153,9 @@ const Calculator = ({ CalculationOptions }) => {
           <h3 className="globalHeading3Primary  mt-5">
             Calculated Carbon Footprint:
           </h3>
-          <p>{result} units</p>
+          <p>
+            {result} <span className="sub-heading">kg CO2</span>{" "}
+          </p>
           <button
             className="secondary-button CalculatorBtn"
             onClick={handleReset}
