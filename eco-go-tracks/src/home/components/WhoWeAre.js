@@ -80,12 +80,10 @@ const WhoWeAre = () => {
       <div className="container center ">
         <div className="row pt-5 pb-5">
           <div className="col-md-6">
-            <h1 className="globalHeading2">
-              Calculate Your Ecological Footprint
-            </h1>
+            <h1 className="globalHeading2">Calculate Your Corbon Footprint</h1>
             <p>
-              Curious about your lifestyle's impact? Calculate your Ecological
-              Footprint© to gain insights into consumption patterns and their
+              Curious about your lifestyle's impact? Calculate your Corbon
+              Footprint to gain insights into consumption patterns and their
               effect on the planet. Discover ways to reduce your footprint for a
               sustainable future
             </p>
