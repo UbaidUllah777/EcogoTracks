@@ -4,6 +4,7 @@ import Button from "../../shared/components/UIElements/Button";
 
 import "./FeaturedBlogs.css";
 
+// Component Function
 const FeaturedBlogs = () => {
   return (
     <Fragment>
