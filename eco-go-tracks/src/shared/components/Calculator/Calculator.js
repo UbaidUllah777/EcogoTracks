@@ -1,7 +1,8 @@
+//importing libraries
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-// Styling
+// importing style
 import "./Calculator.css";
 import "../UIElements/Button.css";
 

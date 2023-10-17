@@ -1,4 +1,7 @@
+//importing libraries
 import React, { Fragment } from "react";
+
+//importing local files and components
 
 import Calculator from "../../shared/components/Calculator/Calculator";
 import CalculationOptions from "../../shared/components/Calculator/CalculationOptions";

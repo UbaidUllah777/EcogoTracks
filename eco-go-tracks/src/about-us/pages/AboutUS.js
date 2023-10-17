@@ -1,9 +1,12 @@
+//importing libraries
 import React, { Fragment } from "react";
-import Banner from "../../shared/components/Banner/Banner";
 
+//importing local files and components
+import Banner from "../../shared/components/Banner/Banner";
 import aboutUsBannerImage from "../../images/aboutUsbanner.jpg";
 import AboutEcoGo from "../components/AboutEcoGo";
 
+//about us page component
 const AboutUs = () => {
   const pageInfo = "Home/About Us"; // Page information for AboutUs page
   const heading = "Our Commitment to a Greener Future"; // Heading for the banner

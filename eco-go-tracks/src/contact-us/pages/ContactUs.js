@@ -1,5 +1,7 @@
+//importing libraries
 import React, { Fragment } from "react";
 
+//importing local files and components
 import Form from "../components/Form";
 import Banner from "../../shared/components/Banner/Banner";
 import aboutUsBannerImage from "../../images/aboutUsbanner.jpg";
