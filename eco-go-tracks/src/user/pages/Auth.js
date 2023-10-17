@@ -42,7 +42,12 @@ const Auth = () => {
     // if we are in login Mode
     if (!isLoginMode) {
       setFormData(
-        { ...formState.inputs, name: undefined },
+        {
+          ...formState.inputs,
+          name: undefined,
+          phone: undefined,
+          address: undefined,
+        },
         formState.inputs.email.isValid && formState.inputs.password.isValid
       );
     }
@@ -52,6 +57,14 @@ const Auth = () => {
         {
           ...formState.inputs,
           name: {
+            value: "",
+            isValid: false,
+          },
+          phone: {
+            value: "",
+            isValid: false,
+          },
+          address: {
             value: "",
             isValid: false,
           },
@@ -79,9 +92,6 @@ const Auth = () => {
             "Content-Type": "application/json",
           }
         );
-
-        auth.login(responseData.user.id);
-        console.log("The User id after loging In", responseData.user.id);
       } catch (err) {}
     }
 
@@ -94,6 +104,8 @@ const Auth = () => {
           JSON.stringify({
             name: formState.inputs.name.value,
             email: formState.inputs.email.value,
+            phone: formState.inputs.phone.value,
+            address: formState.inputs.address.value,
             password: formState.inputs.password.value,
           }),
           {
@@ -135,6 +147,28 @@ const Auth = () => {
             errorText="Please enter a valid email"
             onInput={inputHandler}
           />
+          {!isLoginMode && (
+            <Input
+              element="input"
+              id="phone"
+              type="text"
+              label="Phone*"
+              validators={[VALIDATOR_REQUIRE]}
+              errorText="Please enter your phone number"
+              onInput={inputHandler}
+            />
+          )}
+          {!isLoginMode && (
+            <Input
+              element="input"
+              id="address"
+              type="text"
+              label="Address*"
+              validators={[VALIDATOR_REQUIRE]}
+              errorText="Please enter your phone number"
+              onInput={inputHandler}
+            />
+          )}
           <Input
             element="input"
             id="password"
