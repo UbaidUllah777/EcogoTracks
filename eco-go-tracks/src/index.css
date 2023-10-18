@@ -7,7 +7,7 @@ body {
   color: aliceblue;
   font-family: "Poppins", sans-serif;
 }
-.BGgray{
+.BGgray {
   background-color: #edeff5;
 }
 
@@ -34,11 +34,16 @@ code {
 .globalHeading2 {
   font-size: 2.5rem;
   margin: 15px 0px;
-  
+
   color: #ca477d;
 }
 .globalHeading3 {
   font-size: 1.5rem;
+  margin: 15px 0px;
+  color: #ca477d;
+}
+.globalHeading4 {
+  font-size: 1.2rem;
   margin: 15px 0px;
   color: #ca477d;
 }
@@ -57,7 +62,7 @@ p {
   font-size: 1.2rem;
   padding-bottom: 20px;
 }
-.boldText{
+.boldText {
   font-weight: bold;
 }
 
@@ -73,7 +78,7 @@ p {
   margin: 20px 0px;
 }
 .boldText {
-font-weight: bold;
+  font-weight: bold;
 }
 .main-heading {
   font-size: larger;
@@ -89,7 +94,6 @@ font-weight: bold;
     display: none; /* Hide the logo on tablet and smaller devices */
   }
 }
-
 
 .slide-in-left-enter {
   transform: translateX(-100%);
@@ -111,28 +115,27 @@ font-weight: bold;
   opacity: 0;
   transition: all 200ms;
 }
-.showFourRows{
-   
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 4; /* Limit to 4 lines */
-        -webkit-box-orient: vertical;
+.showFourRows {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
 }
-.cardCustomHeight{
+.cardCustomHeight {
   max-height: auto;
 }
-.tripheadingContainer{
+.tripheadingContainer {
   height: 2.7rem;
   width: 100%;
   background-color: #ca477d;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2; 
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.tripTitle{
+.tripTitle {
   color: aliceblue;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-import HR from "../../shared/components/HR/HR";
+import Card from "../../shared/components/UIElements/Card";
 
 import "./AboutEcoGo.css";
 
@@ -10,108 +10,90 @@ const AboutEcoGo = () => {
       <div className="container ">
         <div className="row ">
           <div className="col-12 center">
-            <h1 className="globalHeading1">
+            <h1 className="globalHeading4">
               Green Commuting for a Sustainable Tomorrow
             </h1>
             <p className="AboutEcoGoDesc">
-              Embrace eco-friendly transportation options to reduce your carbon
-              footprint. From{" "}
+              Green commuting for a sustainable tomorrow" is a concept that
+              focuses on adopting environmentally friendly transportation
+              practices to address the challenges of climate change and{" "}
               <span className="secondary-color boldText">
                 {" "}
-                electric vehicles
+                promote sustainable living
               </span>{" "}
-              to cycling initiatives, explore sustainable choices that
-              positively impact our environment. Together, we can pave the way
-              towards cleaner and greener cities.
+              Commuting, which involves the daily travel of individuals to work,
+              school, or other destinations, is a significant contributor to
+              greenhouse gas emissions and other environmental issues. To create
+              a more sustainable future, there are several key elements and
+              strategies associated with green commuting.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="container">
-        <div className="row">
-          <div className="row">
-            <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
-              <img
-                src="home-gallery1.jpg"
-                className="w-100 shadow-1-strong rounded mb-4"
-                alt="electric car recharging"
-              />
+      <div className="container-fluid center">
+        <div className="row m-2">
+          <div className="col-md-6 col-12">
+            <Card>
+              <h1 className="globalHeading4">Public Transportation</h1>
+              <p
+                style={{ textAlign: "justify", fontSize: "1.1rem" }}
+                className="AboutEcoGoDesc"
+              >
+                Encouraging the use of buses, trams, subways, and trains can
+                significantly reduce the number of cars on the road. Investing
+                in efficient public transportation systems is a crucial step.
+              </p>
+            </Card>
+          </div>
 
-              <img
-                src="home-gallery2.jpg"
-                className="w-100 shadow-1-strong rounded mb-4"
-                alt="mono electric tram on the tracks"
-              />
-            </div>
+          <div className="col-md-6 col-12">
+            <Card>
+              <h1 className="globalHeading4">Biking and Walking</h1>
+              <p
+                style={{ textAlign: "justify", fontSize: "1.1rem" }}
+                className="AboutEcoGoDesc"
+              >
+                Promoting cycling and walking not only reduces emissions but
+                also contributes to improved personal health. Building bike
+                lanes and pedestrian-friendly infrastructure is important
+              </p>
+            </Card>
+          </div>
+        </div>
 
-            <div className="col-lg-4 mb-4 mb-lg-0">
-              <img
-                src="home-gallery3.jpg"
-                className="w-100 shadow-1-strong rounded mb-4"
-                alt="avoid plastic usage sign"
-              />
+        <div className="row m-2">
+          <div className="col-md-6 col-12">
+            <Card>
+              <h1 className="globalHeading4">Electric and Hybrid Vehicles</h1>
+              <p
+                style={{ textAlign: "justify", fontSize: "1.1rem" }}
+                className="AboutEcoGoDesc"
+              >
+                Encouraging the use of electric and hybrid cars reduces the
+                carbon footprint of commuting. Government incentives and
+                charging infrastructure are essential for their adoption of
+                electric vehicals based tranportations
+              </p>
+            </Card>
+          </div>
 
-              <img
-                src="home-gallery4.jpg"
-                className="w-100 shadow-1-strong rounded mb-4"
-                alt="Kid using electric bike"
-              />
-            </div>
-
-            <div className="col-lg-4 mb-4 mb-lg-0">
-              <img
-                src="home-gallery5.jpg"
-                className="w-100 shadow-1-strong rounded mb-4"
-                alt="carbon emissions from a factory"
-              />
-
-              <img
-                src="home-gallery6.jpg"
-                className="w-100 shadow-1-strong rounded mb-4"
-                alt="Yosemite National Park"
-              />
-            </div>
+          <div className="col-md-6 col-12">
+            <Card>
+              <h1 className="globalHeading4">Education and Awareness</h1>
+              <p
+                style={{ textAlign: "justify", fontSize: "1.1rem" }}
+                className="AboutEcoGoDesc"
+              >
+                Raising awareness about commuting's environmental impact and
+                benefits is key to fostering behavioral change and promoting
+                sustainability. Informed individuals can make eco-conscious
+                choices, paving the way for a more sustainable future.
+              </p>
+            </Card>
           </div>
         </div>
       </div>
-      <HR />
-      {/* <div className="container center ">
-        <div className="row pt-5 pb-5">
-          <div className="col-md-6">
-            <h1 className="globalHeading2">
-              Calculate Your Ecological Footprint
-            </h1>
-            <p>
-              Curious about your lifestyle's impact? Calculate your Ecological
-              Footprint© to gain insights into consumption patterns and their
-              effect on the planet. Discover ways to reduce your footprint for a
-              sustainable future
-            </p>
-            <Button
-              to="/about-us"
-              className="secondary-button"
-              buttonText="Calculate Now"
-            />
-          </div>
-          <div className="col-md-6">
-            <h1 className="globalHeading2">
-              Greening Our World: Embracing Nature's Bounty
-            </h1>
-            <p>
-              Immerse yourself in the beauty of greenery and its benefits. From
-              urban gardens to reforestation projects, discover how embracing
-              nature enhances our lives and nurtures a healthier planet. Let's
-              cultivate a world where green spaces flourish.
-            </p>
-            <Button
-              to="/about-us"
-              className="secondary-button"
-              buttonText="Explore More"
-            />
-          </div>
-        </div>
-      </div> */}
     </React.Fragment>
   );
 };
