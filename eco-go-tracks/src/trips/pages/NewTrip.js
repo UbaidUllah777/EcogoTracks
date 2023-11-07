@@ -103,7 +103,10 @@ const NewTrip = () => {
           creator: auth.userId,
           carbonEmissions: carbonEmissions,
         }),
-        { "Content-Type": "application/json" }
+        {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + auth.token,
+        }
       );
       setIsSuccess("Trip Added Successfuly...! ");
 

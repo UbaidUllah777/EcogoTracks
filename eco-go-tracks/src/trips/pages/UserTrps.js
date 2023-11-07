@@ -7,7 +7,6 @@ import TripList from "../components/TripList";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import { useHttpClient } from "../../shared/hooks/http-hook";
-
 //  3- *** STYLING ***
 
 const UserTrips = () => {

@@ -149,6 +149,11 @@ const updateTrip = async (req, res, next) => {
     return next(error);
   }
 
+  if (trip.creator.toString() !== req.userData.userId) {
+    const error = new HttpError("You are Not Alowed to Edit this Trip ", 401);
+    return next(error);
+  }
+
   trip.title = title;
   trip.tripFrom = tripFrom;
   trip.tripTo = tripTo;
@@ -188,6 +193,11 @@ const deleteTrip = async (req, res, next) => {
 
   if (!trip) {
     const error = new HttpError("Trip not found.", 404);
+    return next(error);
+  }
+
+  if (trip.creator.id !== req.userData.userId) {
+    const error = new HttpError("You are Not Alowed to Delete this Trip ", 401);
     return next(error);
   }
 

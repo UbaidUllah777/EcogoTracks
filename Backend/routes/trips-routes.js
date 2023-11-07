@@ -3,6 +3,7 @@ const { check } = require("express-validator");
 
 // const HttpError = require("../models/http-error");
 const tripsControllers = require("../controllers/trips-controlers");
+const checkAuth = require("../middleware/check-auth");
 
 const router = express.Router();
 
@@ -12,6 +13,8 @@ router.get("/:tid", tripsControllers.getTripById);
 // Route for :  Getting all trips of a user by USer Id
 router.get("/user/:uid", tripsControllers.getTripsByUserId);
 
+// Middleware if no Token then wont go to below routes
+router.use(checkAuth);
 // Route for :  Creating a trip by a speific user who is logged in
 router.post(
   "/",
