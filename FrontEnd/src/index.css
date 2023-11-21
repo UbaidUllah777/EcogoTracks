@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #6ea0b1;
+  color: aliceblue;
+  font-family: "Poppins", sans-serif;
+}
+.BGgray {
+  background-color: #edeff5;
+}
+
+code {
+  font-family: "Poppins", sans-serif;
+}
+
+.primary-color {
+  color: #6ea0b1;
+}
+.secondary-color {
+  color: #ca477d;
+}
+
+.container {
+  margin: 10vh 0px;
+}
+
+.globalHeading1 {
+  font-size: 3.5rem;
+  margin: 15px 0px;
+  color: #ca477d;
+}
+.globalHeading2 {
+  font-size: 2.5rem;
+  margin: 15px 0px;
+
+  color: #ca477d;
+}
+.globalHeading3 {
+  font-size: 1.5rem;
+  margin: 15px 0px;
+  color: #ca477d;
+}
+.globalHeading4 {
+  font-size: 1.2rem;
+  margin: 15px 0px;
+  color: #ca477d;
+}
+.globalHeading3Primary {
+  font-size: 1.5rem;
+  margin: 15px 0px;
+  color: #6ea0b1;
+}
+.globalHeading4Primary {
+  font-size: 1.2rem;
+  margin: 15px 0px;
+  color: #6ea0b1;
+}
+
+p {
+  font-size: 1.2rem;
+  padding-bottom: 20px;
+}
+.boldText {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+  align-content: center;
+}
+
+.sub-heading {
+  color: #ca477d;
+  font-size: medium;
+  margin: 20px 0px;
+}
+.boldText {
+  font-weight: bold;
+}
+.main-heading {
+  font-size: larger;
+  margin: 20px 0px;
+}
+.Logo {
+  max-width: 150px; /* Default max-width for the logo */
+}
+
+/* Media query for tablet and larger devices */
+@media (max-width: 433px) {
+  .Logo {
+    display: none; /* Hide the logo on tablet and smaller devices */
+  }
+}
+
+.slide-in-left-enter {
+  transform: translateX(-100%);
+}
+
+.slide-in-left-enter-active {
+  transform: translateX(0);
+  opacity: 1;
+  transition: all 200ms;
+}
+
+.slide-in-left-exit {
+  transform: translateX(0%);
+  opacity: 1;
+}
+
+.slide-in-left-exit-active {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: all 200ms;
+}
+.showFourRows {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+}
+.cardCustomHeight {
+  max-height: auto;
+}
+.tripheadingContainer {
+  height: 2.7rem;
+  width: 100%;
+  background-color: #ca477d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.tripTitle {
+  color: aliceblue;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}

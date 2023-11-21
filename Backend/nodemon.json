@@ -1,0 +1,8 @@
+{
+  "env":{
+    "DB_USER":"shamahhh86",
+    "DB_PASSWORD":"shamah92",
+    "DB_NAME":"EcoGoTrack",
+    "JWT_KEY":"supersecrete_dont_share_this"
+  }
+}

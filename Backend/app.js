@@ -1,5 +1,7 @@
 // ******* Libraries *******
 const express = require("express");
+// const path = require("path");
+
 const bodyParser = require("body-parser"); // import "bodyParser" to ensure that we parse the body of incoming request
 const mongoose = require("mongoose");
 
@@ -26,6 +28,9 @@ app.use((req, res, next) => {
 
 app.use("/api/trips", tripsRoutes);
 app.use("/api/users", usersRoutes);
+app.use((req, res, next) => {
+  res.sendFile(path.resolve(__dirname, "public", "index.html"));
+});
 
 app.use((req, res, next) => {
   const error = new HttpError("could not found this route...", 404);
@@ -43,7 +48,7 @@ app.use((error, req, res, next) => {
 
 mongoose
   .connect(
-    "mongodb+srv://shamahhh86:shamah92@cluster0.ct04ddn.mongodb.net/EcoGoTrack"
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.ct04ddn.mongodb.net/${process.env.DB_NAME}`
   )
   .then(() => {
     // listen to our local host

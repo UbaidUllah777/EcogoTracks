@@ -12,7 +12,7 @@ module.exports = (req, res, next) => {
     if (!token) {
       throw new Error("Authentication Failed");
     }
-    const decodedToken = jwt.verify(token, "supersecrete_dont_share_this");
+    const decodedToken = jwt.verify(token, process.env.JWT_KEY);
     req.userData = { userId: decodedToken.userId };
     next();
   } catch (err) {

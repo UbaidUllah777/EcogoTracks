@@ -1,0 +1,63 @@
+
+.blink{
+    width:200px;
+    height: 50px;
+    padding: 1rem;
+    text-align: center;
+    line-height: 50px;
+}
+.blinking-text{
+    animation: blink 3s linear infinite;
+}
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}
+
+.custom-select {
+    max-width: 350px;
+  }
+  
+  .combobox {
+    appearance: none;
+    /* safari */
+    -webkit-appearance: none;
+    /* other styles for aesthetics */
+    width: 100%;
+    font-size: 1.05rem;
+    padding: 0.675em 1em 0.675em 1em;
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+  }
+  .CalculatorBtn{
+    margin: 2rem 0px;
+  }
+
+  /* Add margin between questions */
+.calculator-question {
+    margin-bottom: 10px;
+  }
+  
+  /* Add margin between radio buttons */
+  .calculator-option-label {
+    margin-bottom: 5px;
+  }
+  
+  /* Add margin to the next button */
+  .CalculatorBtn {
+    margin-top: 10px;
+  }
+  .calculator-option-label{
+      font-size: 14px;
+      padding: 2px;
+  }
+  
+
+  .calculatorHeading{
+    margin: 15px 0px;
+    color: #ca477d;
+  }
